@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://dyaf6y8j8dv0q"]
+[gd_scene load_steps=3 format=3 uid="uid://dyaf6y8j8dv0q"]
+
+[ext_resource type="PackedScene" uid="uid://cjb3ridts8f0x" path="res://scenes/player.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b73e47kri37os" path="res://scenes/floor.tscn" id="2_sugp2"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_0wfyh")]
+
+[node name="StaticBody3D" parent="." instance=ExtResource("2_sugp2")]
