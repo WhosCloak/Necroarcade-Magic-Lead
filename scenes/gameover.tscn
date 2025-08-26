@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://buk43vvonn5u6"]
+
+[ext_resource type="Script" uid="uid://bqjgs7hyfgmoh" path="res://scripts/gameover.gd" id="1_ncp31"]
+[ext_resource type="Texture2D" uid="uid://br0mq41dsy56p" path="res://sprites/gameover.png" id="2_2mkfd"]
+[ext_resource type="FontFile" uid="uid://dbyrp1xpwysxa" path="res://font/Tektur-VariableFont_wdth,wght.ttf" id="2_dy3ie"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncp31")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_2mkfd")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 60.0
+offset_right = 1923.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("2_dy3ie")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER
+PRESS ESC TO QUIT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 725.0
+offset_right = 1162.0
+offset_bottom = 836.0
+theme_override_fonts/font = ExtResource("2_dy3ie")
+theme_override_font_sizes/font_size = 50
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
