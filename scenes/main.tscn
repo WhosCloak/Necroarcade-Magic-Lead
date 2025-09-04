@@ -17,10 +17,10 @@
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1920
-offset_left = -41836.0
-offset_top = -19922.0
-offset_right = 56818.0
-offset_bottom = 23335.0
+offset_left = -41857.0
+offset_top = -19924.0
+offset_right = 56797.0
+offset_bottom = 23333.0
 texture = ExtResource("4_jyhfs")
 expand_mode = 2
 stretch_mode = 1

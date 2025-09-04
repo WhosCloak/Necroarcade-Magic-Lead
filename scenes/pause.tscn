@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m0klm"]
 shader = ExtResource("2_r8yp4")
-shader_parameter/lod = 0.0
+shader_parameter/lod = 0.8
 
 [node name="pause" type="Control"]
 process_mode = 3

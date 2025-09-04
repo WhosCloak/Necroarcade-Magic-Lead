@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dteruq8yhjet2"]
+[gd_scene load_steps=3 format=3 uid="uid://dteruq8yhjet2"]
 
 [ext_resource type="Script" uid="uid://nq23uh7e7byf" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://cs6csxo0respx" path="res://sprites/zombiemainmenu.png" id="2_natt5"]
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ script = ExtResource("1_r3g3c")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+texture = ExtResource("2_natt5")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
