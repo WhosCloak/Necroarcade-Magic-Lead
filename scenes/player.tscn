@@ -4,14 +4,13 @@
 [ext_resource type="Script" uid="uid://ddkaihgteyl1s" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ceaewweu3se1f" path="res://sprites/Heart.png" id="3_qhqgy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_g2els")
+shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
