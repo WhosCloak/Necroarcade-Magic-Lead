@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
 	velocity = input_vector.normalized() * speed
 	move_and_slide()
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("fire"):
 		fire()
 
