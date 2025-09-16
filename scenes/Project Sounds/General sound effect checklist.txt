@@ -1,0 +1,31 @@
+Zombie sounds :
+Idle
+Attack
+Hurt
+Die
+
+Gun shots:
+Different types of guns
+generic revolver fire-good
+generic revolver load-good
+generic revolver movement/equip-good
+
+shotgun fire-trim it down
+shotgun load-good
+shotgun pump-good
+shotgun movement/equip-good (there are 2 variations)
+
+
+Bullet hit sounds-good but find more
+
+Any sounds related to movement: 
+Walking/sprint-not necessarry (can still look for some)
+crouch or slide if added-not necessarry(can still look for some)
+
+Enviroment:
+Boxes breaking
+Ambiance 
+
+Menus:
+Menu music
+Select sound 
