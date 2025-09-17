@@ -1,7 +1,0 @@
-Level 1 roughmap expectations
-
-- level opens up over time 
-	ie. after round 2 (out of 5) streets open up then after round 4 buildings open up
-- start in central area(?) 
-- expected to be tutorial
-- destroyed city (maybe overgrown?)

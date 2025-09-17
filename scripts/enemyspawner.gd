@@ -1,8 +1,7 @@
 extends Node2D
 
-var enemy_scene_basic = preload("res://scenes/enemy1.tscn")
-var enemy_scene_fast = preload("res://scenes/enemy2.tscn")
-var enemy_scene_tank = preload("res://scenes/enemy3.tscn")
+var enemy_scene_1 = preload("res://scenes/enemy1.tscn")
+var enemy_scene_2 = preload("res://scenes/enemy2.tscn")
 
 var spawn_distance = 500
 var spawn_interval = 2.0
@@ -25,8 +24,7 @@ func spawn_enemy():
 	var direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 	var spawn_pos = player.global_position + direction * spawn_distance
 
-	# Pick a random enemy type
-	var enemy_scenes = [enemy_scene_basic, enemy_scene_fast, enemy_scene_tank]
+	var enemy_scenes = [enemy_scene_1, enemy_scene_2]
 	var enemy_scene = enemy_scenes[randi() % enemy_scenes.size()]
 
 	var enemy = enemy_scene.instantiate()
