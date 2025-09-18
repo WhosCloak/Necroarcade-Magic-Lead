@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3ci5m2ebr62h"]
+[gd_scene load_steps=3 format=3 uid="uid://b3ci5m2ebr62h"]
 
 [ext_resource type="Texture2D" uid="uid://cs6csxo0respx" path="res://sprites/zombiemainmenu.png" id="1_ksju7"]
+[ext_resource type="AudioStream" uid="uid://dait8ib7uf8gv" path="res://audios/shotgun_equip_var1.mp3" id="2_6iamk"]
 
 [node name="level_1" type="Node2D"]
 
@@ -11,3 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ksju7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6iamk")
+autoplay = true

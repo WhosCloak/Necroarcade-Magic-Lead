@@ -29,6 +29,10 @@ func _physics_process(_delta):
 	muzzle.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("fire"):
 		fire()
+	if input_vector:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("idle")
 
 func fire():
 	var projectile_instance = projectile.instantiate()
