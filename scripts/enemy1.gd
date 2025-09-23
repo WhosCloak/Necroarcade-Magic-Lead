@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-# --- Variables ---
-@export var speed: float = 100.0
+#Variables
+@export var speed = 100.0
 var player: Node2D = null
 var grunt = preload("res://audios/general sounds/zombie_grunt.mp3")
 
@@ -9,7 +9,6 @@ var grunt = preload("res://audios/general sounds/zombie_grunt.mp3")
 @onready var zombie_audio: AudioStreamPlayer2D = $ZombieGrunt
 
 
-# --- Setup ---
 func _ready() -> void:
 	# Find the player by group
 	player = get_tree().get_first_node_in_group("player")
@@ -24,7 +23,7 @@ func _ready() -> void:
 	makepath()
 
 
-# --- Movement / Pathfinding ---
+#Movement / Pathfinding
 func _physics_process(_delta: float) -> void:
 	if not player:
 		return
@@ -32,15 +31,6 @@ func _physics_process(_delta: float) -> void:
 	# Get next path position from NavigationAgent2D
 	var next_pos: Vector2 = nav_agent.get_next_path_position()
 
-	# If no path, stop
-	if not nav_agent.is_target_reachable():
-		velocity = Vector2.ZERO
-		return
-
-	# If at goal, stop
-	if nav_agent.is_navigation_finished():
-		velocity = Vector2.ZERO
-		return
 
 	# Move toward next path point
 	var dir: Vector2 = (next_pos - global_position).normalized()
