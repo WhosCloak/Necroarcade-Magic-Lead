@@ -1,7 +1,6 @@
 extends Control
 	
 func _on_button_pressed() -> void: #START
-	
 	Fade.transition()
 	await Fade.on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/main.tscn")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=131 format=3 uid="uid://cp3kf82ssstnc"]
+[gd_scene load_steps=132 format=3 uid="uid://cp3kf82ssstnc"]
 
 [ext_resource type="Script" uid="uid://ddkaihgteyl1s" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://mdafn32lc887" path="res://sprites/Survivor_0_Idle.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cebiba5642hgj" path="res://sprites/Survivor_1_Walk.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ceaewweu3se1f" path="res://sprites/Heart.png" id="4_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://dvb833se8wibc" path="res://audios/general impact sounds/gun_impact_var2.mp3" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 18.0
@@ -891,7 +892,9 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 4
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -910,7 +913,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
 [node name="Muzzle" type="Node2D" parent="."]
-position = Vector2(0, -45.055)
+position = Vector2(20, -45.055)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -992,3 +995,6 @@ theme_override_font_sizes/font_size = 115
 text = "Health Restored"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Gun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qlg0r")

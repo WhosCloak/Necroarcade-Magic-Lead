@@ -1,8 +1,9 @@
-[gd_scene load_steps=135 format=3 uid="uid://bibggbp3wrrll"]
+[gd_scene load_steps=136 format=3 uid="uid://bibggbp3wrrll"]
 
 [ext_resource type="Script" uid="uid://d166an3k21du8" path="res://scripts/enemy1.gd" id="1_nb0t0"]
 [ext_resource type="Texture2D" uid="uid://b6wygt2n15e2e" path="res://sprites/Zombie1_8_A.png" id="2_n665k"]
 [ext_resource type="Texture2D" uid="uid://cm21kbuamkl8d" path="res://sprites/Zombie1_1_Walk.png" id="2_nb0t0"]
+[ext_resource type="AudioStream" uid="uid://ckomr5nhv5jsb" path="res://audios/general sounds/zombie_grunt.mp3" id="4_lowyn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]
 radius = 17.3333
@@ -922,9 +923,11 @@ radius = 18.0
 height = 64.0
 
 [node name="enemy1" type="CharacterBody2D" groups=["enemy"]]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.6, 0.6)
 collision_layer = 2
-collision_mask = 8
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_nb0t0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -939,11 +942,23 @@ animation = &"attack"
 autoplay = "walk"
 flip_h = true
 
+[node name="ZombieGrunt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lowyn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
 shape = SubResource("CapsuleShape2D_n665k")
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

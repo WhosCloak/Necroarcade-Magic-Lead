@@ -1,9 +1,10 @@
 extends Node2D
 
+#Load the enemies
 var enemy_scene_1 = preload("res://scenes/enemy1.tscn")
 var enemy_scene_2 = preload("res://scenes/enemy2.tscn")
 
-var spawn_distance = 500
+var spawn_distance = 100
 var spawn_interval = 2.0
 var timer := 0.0
 var player: Node2D
@@ -21,6 +22,7 @@ func spawn_enemy():
 	if not player:
 		return
 
+#Random direction and enemy
 	var direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 	var spawn_pos = player.global_position + direction * spawn_distance
 
