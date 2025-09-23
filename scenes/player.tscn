@@ -894,7 +894,6 @@ animations = [{
 [node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -913,7 +912,10 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
 [node name="Muzzle" type="Node2D" parent="."]
-position = Vector2(20, -45.055)
+position = Vector2(0, -45.055008)
+
+[node name="Gun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qlg0r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -988,13 +990,8 @@ offset_left = -449.5
 offset_right = 449.5
 offset_bottom = 157.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.180392, 0.572549, 0.572549, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 115
 text = "Health Restored"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Gun" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_qlg0r")

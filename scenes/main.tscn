@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
-vertices = PackedVector2Array(3929.6797, 1954.9297, -2683, 1916.0469, -2683, -1014.0078, 3838.289, -1026.9766)
+vertices = PackedVector2Array(945, -533.03906, 945.9922, 494.10938, -951.84375, 516.8672, -936.1406, -541.9531)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3848, -1037, 3940, 1965, -2693, 1926, -2693, -1024)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(955, -543, 956, 504, -962, 527, -946, -552)])
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_tbgi4")
