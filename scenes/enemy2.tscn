@@ -362,7 +362,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oym03")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -499,8 +499,6 @@ position = Vector2(-4.17233e-07, 0)
 sprite_frames = SubResource("SpriteFrames_iolyx")
 animation = &"attack"
 autoplay = "walk"
-frame = 14
-frame_progress = 0.9085728
 speed_scale = 5.0
 flip_h = true
 
@@ -509,10 +507,6 @@ stream = ExtResource("3_mhmjl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
