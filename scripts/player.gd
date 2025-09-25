@@ -67,6 +67,7 @@ func take_damage(amount: int):
 			Global.high_score = score
 		die()
 		
+
 func heal(amount: int):
 	health = min(health + amount, max_health)
 	update_hearts()
