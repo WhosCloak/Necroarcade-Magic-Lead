@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dteruq8yhjet2"]
+[gd_scene load_steps=4 format=3 uid="uid://dteruq8yhjet2"]
 
 [ext_resource type="Script" uid="uid://nq23uh7e7byf" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://cs6csxo0respx" path="res://sprites/zombiemainmenu.png" id="2_natt5"]
+[ext_resource type="AudioStream" uid="uid://bl6hr2cidgkg0" path="res://audios/Music/menu/Main_Menu.mp3" id="3_r3g3c"]
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -68,6 +69,10 @@ offset_right = 183.848
 offset_bottom = 573.0
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r3g3c")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -6,6 +6,7 @@ var projectile = load("res://scenes/Laser.tscn")
 var score = Global.player_score
 var max_health := 3
 var health := max_health
+var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
@@ -29,6 +30,7 @@ func _physics_process(_delta):
 	muzzle.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("fire"):
 		fire()
+		$Gun.play()
 	if input_vector:
 		$AnimatedSprite2D.play("walk")
 	else:
@@ -65,6 +67,7 @@ func take_damage(amount: int):
 			Global.high_score = score
 		die()
 		
+
 func heal(amount: int):
 	health = min(health + amount, max_health)
 	update_hearts()
