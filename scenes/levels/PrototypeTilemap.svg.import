@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkcwlplcns208"
-path="res://.godot/imported/Crawler_3_Jump.png-8b90175914c41e3959af59e1f6eb24fd.ctex"
+uid="uid://bei47jueln0sw"
+path="res://.godot/imported/PrototypeTilemap.svg-8b35b0e35d04d70ee234ba28d8811486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Crawler_3_Jump.png"
-dest_files=["res://.godot/imported/Crawler_3_Jump.png-8b90175914c41e3959af59e1f6eb24fd.ctex"]
+source_file="res://scenes/levels/PrototypeTilemap.svg"
+dest_files=["res://.godot/imported/PrototypeTilemap.svg-8b35b0e35d04d70ee234ba28d8811486.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

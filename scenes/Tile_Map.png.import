@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkcwlplcns208"
-path="res://.godot/imported/Crawler_3_Jump.png-8b90175914c41e3959af59e1f6eb24fd.ctex"
+uid="uid://b6l3k3y7tvlu8"
+path="res://.godot/imported/Tile_Map.png-626884b256fe5bb158c1f1a4951dc76e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Crawler_3_Jump.png"
-dest_files=["res://.godot/imported/Crawler_3_Jump.png-8b90175914c41e3959af59e1f6eb24fd.ctex"]
+source_file="res://scenes/Tile_Map.png"
+dest_files=["res://.godot/imported/Tile_Map.png-626884b256fe5bb158c1f1a4951dc76e.ctex"]
 
 [params]
 
