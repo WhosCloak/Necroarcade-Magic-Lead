@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Variables
-@export var speed = 100
+@export var speed = 125
 @export var player: Node2D = null
 var grunt = preload("res://audios/general sounds/zombie_grunt.mp3")
 

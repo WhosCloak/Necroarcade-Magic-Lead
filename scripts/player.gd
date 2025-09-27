@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 250
+var speed = 100
 var projectilespeed = 500
 var projectile = load("res://scenes/Laser.tscn")
 var score = Global.player_score
