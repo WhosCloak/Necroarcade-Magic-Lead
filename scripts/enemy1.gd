@@ -14,11 +14,8 @@ var flip_threshold := 1.0
 func _ready() -> void:
 	# Find the player by group
 	player = get_tree().get_first_node_in_group("player")
-	
+	$NavigationAgent2D.target_position = player.global_position
 
-	# Play zombie grunt
-	zombie_audio.stream = grunt
-	zombie_audio.play()
 
 func model_facing() -> void:
 	if sprite == null:
@@ -26,10 +23,13 @@ func model_facing() -> void:
 	if abs(velocity.x) > flip_threshold:
 		sprite.flip_h = velocity.x < 0.0
 		
+		
+	
 func makepath():
 	await get_tree().physics_frame
 	if player:
 		nav_agent.target_position = player.global_position
+
 
 func _physics_process(_delta):
 	if player:
@@ -61,3 +61,11 @@ func die() -> void:
 	if player and player.has_method("add_score"):
 		player.add_score()
 	call_deferred("queue_free")
+
+
+func _on_grunt_timer_timeout() -> void:
+	zombie_audio.play()
+
+
+func _on_repath_timer_timeout() -> void:
+	pass # Replace with function body.
