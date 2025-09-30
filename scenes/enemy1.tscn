@@ -944,8 +944,12 @@ speed_scale = 5.0
 
 [node name="ZombieGrunt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_lowyn")
+volume_db = -10.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+path_postprocessing = 1
 avoidance_enabled = true
 debug_enabled = true
 
@@ -957,4 +961,12 @@ collision_mask = 3
 position = Vector2(0, -31.3333)
 shape = SubResource("CapsuleShape2D_n665k")
 
+[node name="GruntTimer" type="Timer" parent="."]
+wait_time = 25.0
+
+[node name="RepathTimer" type="Timer" parent="."]
+wait_time = 0.37
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="GruntTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RepathTimer" to="." method="_on_repath_timer_timeout"]

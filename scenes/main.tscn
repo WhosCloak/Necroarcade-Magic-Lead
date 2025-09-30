@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
-vertices = PackedVector2Array(2581.9688, -1710.0781, 2575.0234, 1281.9531, -950, 1267.0391, -950, -1738.9063)
+vertices = PackedVector2Array(3823.5625, -1743.6094, 3861.8281, 1331.2109, -1260.8984, 1343.9766, -1260.8984, -1756.3828)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(2592, -1720, 2585, 1292, -960, 1277, -960, -1749)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(3828.4998, -1748.5999, 3866.8997, 1336.2, -1265.8999, 1348.9999, -1265.8999, -1761.3999)])
+agent_radius = 5.0
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_tbgi4")
@@ -16,6 +17,7 @@ script = ExtResource("1_tbgi4")
 [node name="LevelRoot" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+scale = Vector2(10, 10)
 navigation_polygon = SubResource("NavigationPolygon_jyhfs")
 
 [node name="player" parent="." instance=ExtResource("2_tefeu")]
