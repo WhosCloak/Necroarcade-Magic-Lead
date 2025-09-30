@@ -31,4 +31,4 @@ func load_level(path: String) -> void:
 
 #Ready level 2
 func go_to_level_2() -> void:
-	load_level("res://scenes/levels/Level_2.tscn")
+	get_tree().change_scene_to_file("res://scenes/end_of_playtest1.tscn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs6csxo0respx"
-path="res://.godot/imported/zombiemainmenu.png-6ceb909878db7f5d6f4edabf29c538e8.ctex"
+uid="uid://b4ij6jedg4kau"
+path="res://.godot/imported/End of Playtest.jpg-a2678d6d08e8e769e21a68f5b9d4d88e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/zombiemainmenu.png"
-dest_files=["res://.godot/imported/zombiemainmenu.png-6ceb909878db7f5d6f4edabf29c538e8.ctex"]
+source_file="res://sprites/End of Playtest.jpg"
+dest_files=["res://.godot/imported/End of Playtest.jpg-a2678d6d08e8e769e21a68f5b9d4d88e.ctex"]
 
 [params]
 
