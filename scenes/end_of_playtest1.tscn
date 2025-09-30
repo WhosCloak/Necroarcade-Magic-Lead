@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://csd7kvono3tph"]
+[gd_scene load_steps=2 format=3 uid="uid://butp41h605y38"]
 
 [ext_resource type="Texture2D" uid="uid://b4ij6jedg4kau" path="res://sprites/End of Playtest.jpg" id="1_32058"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 265.0
+offset_bottom = 186.0
 texture = ExtResource("1_32058")
+expand_mode = 1
