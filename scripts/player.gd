@@ -57,6 +57,7 @@ func add_score(amount: int = 1) -> void:
 		$CanvasLayer/Hearts/Label.visible = true
 		await get_tree().create_timer(2).timeout
 		$CanvasLayer/Hearts/Label.visible = false
+		
 
 func take_damage(amount: int):
 	health -= amount

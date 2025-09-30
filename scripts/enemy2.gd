@@ -45,15 +45,17 @@ func _physics_process(_delta):
 	model_facing()
 
 
-#Collision / Combat
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	var hit_player := body.is_in_group("player")
+
 	$AnimatedSprite2D.play("attack")
 	await $AnimatedSprite2D.animation_finished
-	
-	if body.is_in_group("player"):
+
+	if hit_player and is_instance_valid(body):
 		if body.has_method("take_damage"):
 			body.take_damage(1)
 		die()
+
 
 
 #Death / Scoring
