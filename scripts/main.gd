@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 #Level transition based on score
 func check_next_level() -> void:
-	if level_reached == 1 and Global.player_score >= 5:
+	if level_reached == 1 and Global.player_score >= 100: #CHANGE AFTER LEVEL 2 IS DONE
 		Fade.transition()
 		await Fade.on_transition_finished
 		go_to_level_2()
@@ -31,4 +31,4 @@ func load_level(path: String) -> void:
 
 #Ready level 2
 func go_to_level_2() -> void:
-	load_level("res://scenes/end_of_playtest1.tscn")
+	load_level("res://scenes/levels/level_2.tscn")

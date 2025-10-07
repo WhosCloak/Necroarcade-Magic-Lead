@@ -7,10 +7,12 @@ var score = Global.player_score
 var max_health := 3
 var health := max_health
 var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
+var flip_threshold := 1.0
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
 @onready var score_label = $CanvasLayer/Score/Label
+@onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts := [
 	$CanvasLayer/Hearts/Heart1,
 	$CanvasLayer/Hearts/Heart2,
@@ -40,6 +42,7 @@ func _physics_process(_delta):
 	muzzle.look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("fire"):
 		fire()
+		model_facing()
 		$Gun.play()
 	if input_vector:
 		$AnimatedSprite2D.play("Walk_armless")
@@ -50,6 +53,17 @@ func _physics_process(_delta):
 		arm_sprite.position.y = new_y
 	arm_sprite.look_at(get_global_mouse_position()) #rotate arm to mouse
 	arm_sprite.rotation -= PI / 2
+	
+	
+	
+func model_facing() -> void:
+	if sprite == null:
+		return
+	if abs(velocity.x) > flip_threshold:
+		sprite.flip_h = velocity.x < 0.0
+		
+		
+		
 func fire():
 	var projectile_instance = projectile.instantiate()
 	var fire_pos = muzzle.global_position
