@@ -17,11 +17,21 @@ var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 	$CanvasLayer/Hearts/Heart3
 ]
 
+@onready var arm_sprite = $ArmSurvivor
+
+# Variables for arm movement
+var amplitude = 0.5  
+var speed_osc = 4.5   # Speed of oscillation
+var time_passed = 0.0 
+var initial_y = 0.0   # Initial y position of ArmSurvivor
 
 func _ready():
 	cam.zoom = Vector2(3.5, 3.5)
 	update_hearts()
 	cam.set_process(true)
+	initial_y = arm_sprite.position.y
+	arm_sprite.offset = Vector2(9, 20)
+	initial_y = arm_sprite.position.y - 12.5
 
 func _physics_process(_delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
@@ -32,10 +42,14 @@ func _physics_process(_delta):
 		fire()
 		$Gun.play()
 	if input_vector:
-		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.play("Walk_armless")
 	else:
-		$AnimatedSprite2D.play("idle")
-
+		$AnimatedSprite2D.play("Idle_armless")
+		time_passed += _delta * speed_osc
+		var new_y = initial_y + sin(time_passed) * amplitude
+		arm_sprite.position.y = new_y
+	arm_sprite.look_at(get_global_mouse_position()) #rotate arm to mouse
+	arm_sprite.rotation -= PI / 2
 func fire():
 	var projectile_instance = projectile.instantiate()
 	var fire_pos = muzzle.global_position

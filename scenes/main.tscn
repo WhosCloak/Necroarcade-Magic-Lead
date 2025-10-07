@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
-vertices = PackedVector2Array(3823.5625, -1743.6094, 3861.8281, 1331.2109, -1260.8984, 1343.9766, -1260.8984, -1756.3828)
+vertices = PackedVector2Array(3823.56, -1743.61, 3861.83, 1331.21, -1260.9, 1343.98, -1260.9, -1756.38)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3828.4998, -1748.5999, 3866.8997, 1336.2, -1265.8999, 1348.9999, -1265.8999, -1761.3999)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(3828.5, -1748.6, 3866.9, 1336.2, -1265.9, 1349, -1265.9, -1761.4)])
 agent_radius = 5.0
 
 [node name="main" type="Node2D"]
