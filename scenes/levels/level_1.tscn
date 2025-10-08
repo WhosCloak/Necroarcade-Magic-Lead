@@ -142,9 +142,9 @@ sources/1 = SubResource("TileSetAtlasSource_nsrm0")
 sources/0 = SubResource("TileSetAtlasSource_x42e6")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ksju7"]
-vertices = PackedVector2Array(305.0703, -131.6875, 278.1875, 184.53906, -123.9375, 197.5625, -194.72656, -149.96094)
+vertices = PackedVector2Array(278.1875, 184.53906, -123.078125, 197.53125, -128.60938, -129.71875, 305.04688, -131.46875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(310.49997, -136.49998, 282.8, 189.4, -127.99999, 202.69998, -200.9, -155.2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(310.49997, -136.49998, 282.8, 189.4, -127.99999, 202.69998, -133.7, -134.7)])
 agent_radius = 5.0
 
 [node name="level_1" type="Node2D"]
