@@ -1,24 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3grfsvfta7fk"]
+[gd_scene load_steps=5 format=3 uid="uid://b3grfsvfta7fk"]
 
 [ext_resource type="Script" uid="uid://djjpqu61fnnfn" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cp3kf82ssstnc" path="res://scenes/player.tscn" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
-vertices = PackedVector2Array(3823.56, -1743.61, 3861.83, 1331.21, -1260.9, 1343.98, -1260.9, -1756.38)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3828.5, -1748.6, 3866.9, 1336.2, -1265.9, 1349, -1265.9, -1761.4)])
-agent_radius = 5.0
-
 [node name="main" type="Node2D"]
 script = ExtResource("1_tbgi4")
 
 [node name="LevelRoot" type="Node2D" parent="."]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-scale = Vector2(10, 10)
-navigation_polygon = SubResource("NavigationPolygon_jyhfs")
 
 [node name="player" parent="." instance=ExtResource("2_tefeu")]
 

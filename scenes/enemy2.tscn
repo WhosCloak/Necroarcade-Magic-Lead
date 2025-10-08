@@ -1,6 +1,6 @@
 [gd_scene load_steps=73 format=3 uid="uid://dldjgwv7l46rt"]
 
-[ext_resource type="Script" path="res://scripts/enemy2.gd" id="1_3neu4"]
+[ext_resource type="Script" uid="uid://cbbgmj7wtrd7u" path="res://scripts/enemy2.gd" id="1_3neu4"]
 [ext_resource type="Texture2D" uid="uid://c8cgnhxgt7j83" path="res://sprites/Crawler_2_Dash.png" id="2_23kvp"]
 [ext_resource type="Texture2D" uid="uid://d18nr8dch05sg" path="res://sprites/Crawler_1_Walk.png" id="2_mhmjl"]
 [ext_resource type="AudioStream" uid="uid://ckomr5nhv5jsb" path="res://audios/general sounds/zombie_grunt.mp3" id="3_mhmjl"]
@@ -483,8 +483,8 @@ height = 64.0
 
 [node name="enemy2" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
-collision_layer = 4
-collision_mask = 3
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_3neu4")
@@ -512,8 +512,8 @@ path_postprocessing = 1
 debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)

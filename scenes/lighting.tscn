@@ -1,18 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmvqix4hmvbvs"]
+[gd_scene load_steps=4 format=3 uid="uid://qnvej2621rk6"]
 
-[ext_resource type="Script" uid="uid://bv333nlqrnrml" path="res://scripts/laser.gd" id="1_a7dhc"]
-[ext_resource type="Texture2D" uid="uid://b30kb673hr1wb" path="res://sprites/zombiebullet.png" id="2_ag3aa"]
+[ext_resource type="Script" uid="uid://ftj4q7pugb4y" path="res://scripts/lighting.gd" id="1_vbvkp"]
+[ext_resource type="Texture2D" uid="uid://crjj0xgjkasue" path="res://sprites/lighting.png" id="2_vbvkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7dhc"]
-size = Vector2(16, 7)
+size = Vector2(24, 7)
 
-[node name="laser" type="RigidBody2D"]
+[node name="lighting" type="RigidBody2D"]
 collision_layer = 4
-collision_mask = 9
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("1_a7dhc")
+script = ExtResource("1_vbvkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
@@ -21,7 +20,8 @@ shape = SubResource("RectangleShape2D_a7dhc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_ag3aa")
+position = Vector2(2.3841858e-07, 1.1920929e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2_vbvkp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

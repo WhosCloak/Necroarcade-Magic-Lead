@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 var speed = 100
-var projectilespeed = 500
-var projectile = load("res://scenes/Laser.tscn")
+var bulletspeed = 500
+var bullet = load("res://scenes/Laser.tscn")
+var lighting := load("res://scenes/lighting.tscn")
 var score = Global.player_score
 var max_health := 3
 var health := max_health
 var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 var flip_threshold := 1.0
+var offlightingcooldown := true
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
@@ -40,10 +42,15 @@ func _physics_process(_delta):
 	velocity = input_vector.normalized() * speed
 	move_and_slide()
 	muzzle.look_at(get_global_mouse_position())
+	model_facing()
 	if Input.is_action_just_pressed("fire"):
 		fire()
-		model_facing()
 		$Gun.play()
+	if Input.is_action_just_pressed("magic") and offlightingcooldown:
+		magic()
+		$lighting.play()
+		offlightingcooldown = false
+		$lightingcooldown.start()
 	if input_vector:
 		$AnimatedSprite2D.play("Walk_armless")
 	else:
@@ -65,17 +72,30 @@ func model_facing() -> void:
 		
 		
 func fire():
-	var projectile_instance = projectile.instantiate()
+	var bullet_instance = bullet.instantiate()
 	var fire_pos = muzzle.global_position
 	var direction = (get_global_mouse_position() - fire_pos).normalized()
 	
-	projectile_instance.global_position = fire_pos
-	projectile_instance.rotation = direction.angle()
-	projectile_instance.linear_velocity = direction * projectilespeed
+	bullet_instance.global_position = fire_pos
+	bullet_instance.rotation = direction.angle()
+	bullet_instance.linear_velocity = direction * bulletspeed
 
-	get_tree().current_scene.add_child(projectile_instance)
+	get_tree().current_scene.add_child(bullet_instance)
 	
+func magic():
+	var lighting_instance = lighting.instantiate()
+	var fire_pos = muzzle.global_position
+	var direction = (get_global_mouse_position() - fire_pos).normalized()
+	
+	lighting_instance.global_position = fire_pos
+	lighting_instance.rotation = direction.angle()
+	lighting_instance.linear_velocity = direction * bulletspeed
 
+	get_tree().current_scene.add_child(lighting_instance)
+	
+	
+	
+	
 func add_score(amount: int = 1) -> void:
 	score += amount
 	Global.player_score = score
@@ -114,3 +134,7 @@ func _gameover():
 func update_hearts():
 	for i in range(max_health):
 		hearts[i].visible = (i < health)
+
+
+func _on_lightingcooldown_timeout() -> void:
+	offlightingcooldown = true

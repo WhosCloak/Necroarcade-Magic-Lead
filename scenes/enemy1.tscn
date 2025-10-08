@@ -924,8 +924,8 @@ height = 64.0
 
 [node name="enemy1" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
-collision_layer = 4
-collision_mask = 3
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_nb0t0")
@@ -950,23 +950,14 @@ volume_db = -10.0
 path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
-avoidance_enabled = true
 debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
 shape = SubResource("CapsuleShape2D_n665k")
 
-[node name="GruntTimer" type="Timer" parent="."]
-wait_time = 25.0
-
-[node name="RepathTimer" type="Timer" parent="."]
-wait_time = 0.37
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="GruntTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="RepathTimer" to="." method="_on_repath_timer_timeout"]

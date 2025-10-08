@@ -644,8 +644,8 @@ height = 64.0
 
 [node name="enemy3" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
-collision_layer = 4
-collision_mask = 3
+collision_layer = 8
+collision_mask = 7
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_kroph")
@@ -675,8 +675,8 @@ path_postprocessing = 1
 debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
