@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 #Variables
-@export var speed = 50
-@export var player: Node2D = null
-var grunt = preload("res://audios/general sounds/zombie_grunt.mp3")
+var speed := 50
+var player: Node2D = null
+var grunt := preload("res://audios/general sounds/zombie_grunt.mp3")
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var zombie_audio: AudioStreamPlayer2D = $ZombieGrunt
@@ -47,6 +47,7 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	$AnimatedSprite2D.play("attack")
+	zombie_audio.play()
 	await $AnimatedSprite2D.animation_finished
 
 	if is_instance_valid(body) and body.is_in_group("player"):
@@ -60,11 +61,3 @@ func die() -> void:
 	if player and player.has_method("add_score"):
 		player.add_score()
 	call_deferred("queue_free")
-
-
-func _on_grunt_timer_timeout() -> void:
-	zombie_audio.play()
-
-
-func _on_repath_timer_timeout() -> void:
-	pass # Replace with function body.

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://qnvej2621rk6"]
+
+[ext_resource type="Script" uid="uid://ftj4q7pugb4y" path="res://scripts/lighting.gd" id="1_vbvkp"]
+[ext_resource type="Texture2D" uid="uid://crjj0xgjkasue" path="res://sprites/lighting.png" id="2_vbvkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7dhc"]
+size = Vector2(78, 7)
+
+[node name="lighting" type="RigidBody2D"]
+collision_layer = 4
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_vbvkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13.5, -0.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_a7dhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13.999998, 1.1920929e-07)
+scale = Vector2(1.1874999, 0.3125)
+texture = ExtResource("2_vbvkp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

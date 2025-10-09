@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bei47jueln0sw"
-path="res://.godot/imported/PrototypeTilemap.svg-8b35b0e35d04d70ee234ba28d8811486.ctex"
+uid="uid://crjj0xgjkasue"
+path="res://.godot/imported/lighting.png-a9b85b03365adf22546c062e47e99f56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/PrototypeTilemap.svg"
-dest_files=["res://.godot/imported/PrototypeTilemap.svg-8b35b0e35d04d70ee234ba28d8811486.ctex"]
+source_file="res://sprites/lighting.png"
+dest_files=["res://.godot/imported/lighting.png-a9b85b03365adf22546c062e47e99f56.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
