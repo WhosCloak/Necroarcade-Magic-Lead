@@ -62,7 +62,6 @@ func _physics_process(_delta):
 	arm_sprite.rotation -= PI / 2
 	
 	
-	
 func model_facing() -> void:
 	if sprite == null:
 		return
