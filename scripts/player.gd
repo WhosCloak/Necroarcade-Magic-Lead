@@ -10,6 +10,7 @@ var health := max_health
 var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 var flip_threshold := 1.0
 var offlightingcooldown := true
+var speedup := false
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
@@ -43,6 +44,8 @@ func _physics_process(_delta):
 	move_and_slide()
 	muzzle.look_at(get_global_mouse_position())
 	model_facing()
+	_on_power_up()
+		
 	if Input.is_action_just_pressed("fire"):
 		fire()
 		$Gun.play()
@@ -81,6 +84,7 @@ func fire():
 
 	get_tree().current_scene.add_child(bullet_instance)
 	
+
 func magic():
 	var lighting_instance = lighting.instantiate()
 	var fire_pos = muzzle.global_position
@@ -92,9 +96,9 @@ func magic():
 
 	get_tree().current_scene.add_child(lighting_instance)
 	
-	
-	
-	
+
+
+
 func add_score(amount: int = 1) -> void:
 	score += amount
 	Global.player_score = score
@@ -137,3 +141,9 @@ func update_hearts():
 
 func _on_lightingcooldown_timeout() -> void:
 	offlightingcooldown = true
+	
+func _on_power_up() -> void:
+	if speedup == true:
+		print("speed up")
+		speed = 200
+			

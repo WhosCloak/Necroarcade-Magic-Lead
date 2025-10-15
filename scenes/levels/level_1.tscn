@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://b3ci5m2ebr62h"]
+[gd_scene load_steps=7 format=4 uid="uid://b3ci5m2ebr62h"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://qdicobr737ki" path="res://scenes/speedup.tscn" id="2_6iamk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
 texture = ExtResource("1_ksju7")
@@ -172,3 +173,5 @@ tile_set = SubResource("TileSet_nsrm0")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(10, 10)
 navigation_polygon = SubResource("NavigationPolygon_ksju7")
+
+[node name="speedup" parent="." instance=ExtResource("2_6iamk")]
