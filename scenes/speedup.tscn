@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://qdicobr737ki"]
+[gd_scene load_steps=7 format=3 uid="uid://qdicobr737ki"]
 
 [ext_resource type="Script" uid="uid://btftw4smxoojd" path="res://scripts/speedup.gd" id="1_t086v"]
+[ext_resource type="Texture2D" uid="uid://ceaewweu3se1f" path="res://sprites/Heart.png" id="2_j6y3j"]
 [ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="2_nxcth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_115eg"]
+atlas = ExtResource("2_j6y3j")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t086v"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_115eg")
+}],
 "loop": true,
 "name": &"default",
 "speed": 10.0
@@ -19,6 +27,7 @@ collision_mask = 64
 script = ExtResource("1_t086v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.135, 0.135)
 sprite_frames = SubResource("SpriteFrames_t086v")
 autoplay = "default"
 

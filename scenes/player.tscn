@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=3 uid="uid://cp3kf82ssstnc"]
+[gd_scene load_steps=262 format=3 uid="uid://cp3kf82ssstnc"]
 
 [ext_resource type="Script" uid="uid://ddkaihgteyl1s" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dlebl24hyfo4y" path="res://sprites/Survivor/Survivor, armless/Survivor_0_Idle.png" id="2_fjrip"]
@@ -1774,6 +1774,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_y4r1p"]
+font_size = 70
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
@@ -1890,6 +1893,27 @@ grow_horizontal = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 115
 text = "Health Restored"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bulletcount" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bulletcount" type="Label" parent="CanvasLayer/Bulletcount"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1582.0
+offset_right = 1880.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 0"
+label_settings = SubResource("LabelSettings_y4r1p")
 horizontal_alignment = 1
 vertical_alignment = 1
 

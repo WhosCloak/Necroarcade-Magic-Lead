@@ -11,18 +11,23 @@ var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 var flip_threshold := 1.0
 var offlightingcooldown := true
 var speedup := false
+var maxbulletcount := 18
+var canshoot := true
+var magcount := maxbulletcount
+var ammocount := 50
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
 @onready var score_label = $CanvasLayer/Score/Label
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var arm_sprite = $ArmSurvivor
+@onready var bulletcount: Label = $CanvasLayer/Bulletcount/bulletcount
 @onready var hearts := [
 	$CanvasLayer/Hearts/Heart1,
 	$CanvasLayer/Hearts/Heart2,
 	$CanvasLayer/Hearts/Heart3
 ]
 
-@onready var arm_sprite = $ArmSurvivor
 
 # Variables for arm movement
 var amplitude = 0.5  
@@ -46,9 +51,11 @@ func _physics_process(_delta):
 	model_facing()
 	_on_power_up()
 		
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and canshoot and magcount > 0:
 		fire()
 		$Gun.play()
+	if Input.is_action_just_pressed("reload") and magcount > 0:
+		
 	if Input.is_action_just_pressed("magic") and offlightingcooldown:
 		magic()
 		$lighting.play()
@@ -74,6 +81,8 @@ func model_facing() -> void:
 		
 		
 func fire():
+	canshoot = false
+	magcount -= 1
 	var bullet_instance = bullet.instantiate()
 	var fire_pos = muzzle.global_position
 	var direction = (get_global_mouse_position() - fire_pos).normalized()
