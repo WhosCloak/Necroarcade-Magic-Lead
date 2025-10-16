@@ -10,11 +10,12 @@ func _on_interact():
 
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.speedup = true
+		player.speed = 200
 
 
-		await get_tree().create_timer(10.0).timeout
-		player.speedup = false
+		await get_tree().create_timer(5.0).timeout
+		player.speed = 100
+		print('speed over')
 	
 
 	self.queue_free()

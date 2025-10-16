@@ -10,7 +10,6 @@ var health := max_health
 var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
 var flip_threshold := 1.0
 var offlightingcooldown := true
-var speedup := false
 var maxbulletcount := 18
 var canshoot := true
 var magcount := maxbulletcount
@@ -50,7 +49,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	muzzle.look_at(get_global_mouse_position())
 	model_facing()
-	_on_power_up()
+
 
 	if Input.is_action_just_pressed("fire") and canshoot and not reloading and magcount > 0:
 		fire()
@@ -180,7 +179,3 @@ func update_hearts():
 func _on_lightingcooldown_timeout() -> void:
 	offlightingcooldown = true
 	
-func _on_power_up() -> void:
-	if speedup == true:
-		speed = 200
-			
