@@ -10,11 +10,6 @@ func _on_interact():
 
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.speedup = true
-
-
-		await get_tree().create_timer(10.0).timeout
-		player.speedup = false
-	
+		player.ammocount = 50
 
 	self.queue_free()
