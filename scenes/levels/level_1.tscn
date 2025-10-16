@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://qdicobr737ki" path="res://scenes/speedup.tscn" id="3_x42e6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iamk"]
 texture = ExtResource("1_ksju7")
 0:0/0 = 0
 1:0/0 = 0
@@ -141,7 +141,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 10
 navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_nsrm0")
-sources/0 = SubResource("TileSetAtlasSource_x42e6")
+sources/0 = SubResource("TileSetAtlasSource_6iamk")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ksju7"]
 vertices = PackedVector2Array(278.1875, 184.53906, -123.078125, 197.53125, -128.60938, -129.71875, 305.04688, -131.46875)
