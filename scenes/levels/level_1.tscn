@@ -1,7 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://b3ci5m2ebr62h"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_ksju7"]
-[ext_resource type="PackedScene" uid="uid://qdicobr737ki" path="res://scenes/speedup.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="3_nsrm0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
@@ -149,6 +148,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(310.49997, -136.49998, 282.8, 189.4, -127.99999, 202.69998, -133.7, -134.7)])
 agent_radius = 5.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
+size = Vector2(5170, 60.499878)
+
 [node name="level_1" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
@@ -172,10 +174,42 @@ tile_map_data = PackedByteArray("AADq/+3/AAAIAAYAAADV/+3/AAAIAAYAAFDV/+b/AAAIAAY
 tile_set = SubResource("TileSet_nsrm0")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 scale = Vector2(10, 10)
 navigation_polygon = SubResource("NavigationPolygon_ksju7")
 
-[node name="speedup" parent="." instance=ExtResource("2_6iamk")]
-
 [node name="enemyspawner" parent="." instance=ExtResource("3_nsrm0")]
 position = Vector2(526, -136)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(991, 1174)
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -2165)
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(991, 1174)
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(361, -1077)
+rotation = 1.5707964
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1066.0001, 1106.25)
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(3593, -1083)
+rotation = 1.5707964
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(991, 1174)
+shape = SubResource("RectangleShape2D_6iamk")

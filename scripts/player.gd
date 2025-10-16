@@ -107,6 +107,7 @@ func reload():
 	reloading = true
 	canshoot = false
 	$Gun.stop()
+	#reload audio
 	await get_tree().create_timer(reload_time).timeout
 
 	var needed_bullets = maxbulletcount - magcount
