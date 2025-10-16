@@ -82,9 +82,20 @@ func model_facing() -> void:
 		return
 	if abs(velocity.x) > flip_threshold:
 		sprite.flip_h = velocity.x < 0.0
-		
-		
-		
+		arm_sprite.offset = Vector2(6, 10)
+
+	var mouse_pos = get_global_mouse_position()
+	var center_x = get_viewport_rect().size.x / 2.0
+	
+	if mouse_pos.x < center_x:
+		arm_sprite.offset = Vector2(9, 20)
+		sprite.flip_h = velocity.x < 0.0
+		print("Mouse is on the left side")
+	elif mouse_pos.x > center_x:
+		arm_sprite.offset = Vector2(6, 10)
+		sprite.flip_h = velocity.x < 0.0
+		print("Mouse is on the right side")
+
 func fire():
 	var bullet_instance = bullet.instantiate()
 	var fire_pos = muzzle.global_position
