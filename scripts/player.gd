@@ -15,6 +15,8 @@ var maxbulletcount := 18
 var canshoot := true
 var magcount := maxbulletcount
 var ammocount := 50
+var reloading := false
+var reload_time := 2.0 # seconds it takes to reload
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
@@ -28,12 +30,10 @@ var ammocount := 50
 	$CanvasLayer/Hearts/Heart3
 ]
 
-
-# Variables for arm movement
 var amplitude = 0.5  
-var speed_osc = 4.5   # Speed of oscillation
+var speed_osc = 4.5
 var time_passed = 0.0 
-var initial_y = 0.0   # Initial y position of ArmSurvivor
+var initial_y = 0.0
 
 func _ready():
 	cam.zoom = Vector2(3.5, 3.5)
@@ -42,6 +42,7 @@ func _ready():
 	initial_y = arm_sprite.position.y
 	arm_sprite.offset = Vector2(9, 20)
 	initial_y = arm_sprite.position.y - 12.5
+	update_bullet_ui()
 
 func _physics_process(_delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
@@ -50,17 +51,22 @@ func _physics_process(_delta):
 	muzzle.look_at(get_global_mouse_position())
 	model_facing()
 	_on_power_up()
-		
-	if Input.is_action_just_pressed("fire") and canshoot and magcount > 0:
+
+	if Input.is_action_just_pressed("fire") and canshoot and not reloading and magcount > 0:
 		fire()
 		$Gun.play()
-	if Input.is_action_just_pressed("reload") and magcount > 0:
-		
+	elif Input.is_action_just_pressed("fire") and magcount <= 0 and not reloading:
+		reload() # auto reload if empty
+
+	if Input.is_action_just_pressed("reload") and not reloading and magcount < maxbulletcount and ammocount > 0:
+		reload()
+
 	if Input.is_action_just_pressed("magic") and offlightingcooldown:
 		magic()
 		$lighting.play()
 		offlightingcooldown = false
 		$lightingcooldown.start()
+
 	if input_vector:
 		$AnimatedSprite2D.play("Walk_armless")
 	else:
@@ -68,7 +74,7 @@ func _physics_process(_delta):
 		time_passed += _delta * speed_osc
 		var new_y = initial_y + sin(time_passed) * amplitude
 		arm_sprite.position.y = new_y
-	arm_sprite.look_at(get_global_mouse_position()) #rotate arm to mouse
+	arm_sprite.look_at(get_global_mouse_position())
 	arm_sprite.rotation -= PI / 2
 	
 	
@@ -81,19 +87,41 @@ func model_facing() -> void:
 		
 		
 func fire():
-	canshoot = false
-	magcount -= 1
 	var bullet_instance = bullet.instantiate()
 	var fire_pos = muzzle.global_position
 	var direction = (get_global_mouse_position() - fire_pos).normalized()
-	
+
 	bullet_instance.global_position = fire_pos
 	bullet_instance.rotation = direction.angle()
 	bullet_instance.linear_velocity = direction * bulletspeed
-
 	get_tree().current_scene.add_child(bullet_instance)
-	
 
+	magcount -= 1
+	update_bullet_ui()
+
+	if magcount <= 0:
+		canshoot = false
+
+
+func reload():
+	reloading = true
+	canshoot = false
+	$Gun.stop()
+	await get_tree().create_timer(reload_time).timeout
+
+	var needed_bullets = maxbulletcount - magcount
+	var bullets_to_reload = min(needed_bullets, ammocount)
+	ammocount -= bullets_to_reload
+	magcount += bullets_to_reload
+
+	reloading = false
+	canshoot = true
+	update_bullet_ui()
+
+
+func update_bullet_ui():
+	bulletcount.text = str(magcount) + "/" + str(ammocount)
+	
 func magic():
 	var lighting_instance = lighting.instantiate()
 	var fire_pos = muzzle.global_position
@@ -153,6 +181,5 @@ func _on_lightingcooldown_timeout() -> void:
 	
 func _on_power_up() -> void:
 	if speedup == true:
-		print("speed up")
 		speed = 200
 			
