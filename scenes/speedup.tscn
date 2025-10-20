@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://qdicobr737ki"]
+
+[ext_resource type="Script" uid="uid://btftw4smxoojd" path="res://scripts/speedup.gd" id="1_t086v"]
+[ext_resource type="Texture2D" uid="uid://2vckkyn71v4x" path="res://sprites/Upgrades/Speed Shoes.png" id="2_j6y3j"]
+[ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="2_nxcth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_115eg"]
+atlas = ExtResource("2_j6y3j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t086v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_115eg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6y3j"]
+
+[node name="speedup" type="Area2D"]
+collision_layer = 32
+collision_mask = 64
+script = ExtResource("1_t086v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.475, 0.475)
+sprite_frames = SubResource("SpriteFrames_t086v")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j6y3j")
+
+[node name="interactable" parent="." instance=ExtResource("2_nxcth")]

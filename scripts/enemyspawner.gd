@@ -1,17 +1,17 @@
 extends Node2D
 
-#Load the enemies
+# Load enemy scenes
 var enemy_scene_1 = preload("res://scenes/enemy1.tscn")
 var enemy_scene_2 = preload("res://scenes/enemy2.tscn")
 var enemy_scene_3 = preload("res://scenes/enemy3.tscn")
 
-var spawn_distance = 500
-var spawn_interval = 1.0
+var spawn_interval := 1.0
 var timer := 0.0
-var player: Node2D
+var spawn_point: Marker2D
 
 func _ready():
-	player = get_tree().get_first_node_in_group("player")
+	spawn_point = $Marker2D
+	randomize()
 
 func _process(delta):
 	timer += delta
@@ -20,16 +20,14 @@ func _process(delta):
 		spawn_enemy()
 
 func spawn_enemy():
-	if not player:
+	if not spawn_point:
 		return
 
-#Random direction and enemy
-	var direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
-	var spawn_pos = player.global_position + direction * spawn_distance
-
+	# Choose a random enemy scene
 	var enemy_scenes = [enemy_scene_1, enemy_scene_2, enemy_scene_3]
 	var enemy_scene = enemy_scenes[randi() % enemy_scenes.size()]
 
 	var enemy = enemy_scene.instantiate()
-	enemy.global_position = spawn_pos
+	enemy.global_position = spawn_point.global_position
+
 	get_tree().current_scene.add_child(enemy)
