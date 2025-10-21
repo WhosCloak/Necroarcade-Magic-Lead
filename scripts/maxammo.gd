@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _on_interact():
 	is_interactable = false
-	$AudioStreamPlayer.play()
 
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
