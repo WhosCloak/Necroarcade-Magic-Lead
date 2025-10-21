@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0la6keapto2y"
+path="res://.godot/imported/variant_zombie_grunt1.mp3-cdcf8d6d3e985e465b10e0cdbb69a4f3.mp3str"
+
+[deps]
+
+source_file="res://audios/enemy sounds/normal zombie/variant_zombie_grunt1.mp3"
+dest_files=["res://.godot/imported/variant_zombie_grunt1.mp3-cdcf8d6d3e985e465b10e0cdbb69a4f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

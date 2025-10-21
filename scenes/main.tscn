@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djjpqu61fnnfn" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cp3kf82ssstnc" path="res://scenes/player.tscn" id="2_tefeu"]
-[ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" path="res://scenes/powerupspawner.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
 [node name="main" type="Node2D"]

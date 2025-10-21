@@ -38,9 +38,8 @@ func _ready():
 	cam.zoom = Vector2(3.5, 3.5)
 	update_hearts()
 	cam.set_process(true)
-	initial_y = arm_sprite.position.y
 	arm_sprite.offset = Vector2(9, 20)
-	initial_y = arm_sprite.position.y - 12.5
+	initial_y = arm_sprite.position.y - 11.3
 	update_bullet_ui()
 
 func _physics_process(_delta):
@@ -76,25 +75,24 @@ func _physics_process(_delta):
 	arm_sprite.look_at(get_global_mouse_position())
 	arm_sprite.rotation -= PI / 2
 	
-	
 func model_facing() -> void:
 	if sprite == null:
 		return
+
 	if abs(velocity.x) > flip_threshold:
 		sprite.flip_h = velocity.x < 0.0
-		arm_sprite.offset = Vector2(6, 10)
 
 	var mouse_pos = get_global_mouse_position()
-	var center_x = get_viewport_rect().size.x / 2.0
-	
-	if mouse_pos.x < center_x:
-		arm_sprite.offset = Vector2(9, 20)
-		sprite.flip_h = velocity.x < 0.0
-		print("Mouse is on the left side")
-	elif mouse_pos.x > center_x:
-		arm_sprite.offset = Vector2(6, 10)
-		sprite.flip_h = velocity.x < 0.0
-		print("Mouse is on the right side")
+	var player_pos = global_position
+
+	if mouse_pos.x < player_pos.x:
+		sprite.flip_h = true
+		arm_sprite.position.x = 7
+		arm_sprite.scale.x = -1
+	elif mouse_pos.x > player_pos.x:
+		sprite.flip_h = false
+		arm_sprite.position.x = -7
+		arm_sprite.scale.x = 1
 
 func fire():
 	var bullet_instance = bullet.instantiate()

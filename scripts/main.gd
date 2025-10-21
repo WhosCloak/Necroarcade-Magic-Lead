@@ -19,6 +19,18 @@ func check_next_level() -> void:
 		go_to_level_2()
 		level_reached = 2
 
+#	if level_reached == 2 and Global.player_score >= 200: #CHANGE AFTER LEVEL 3 IS DONE
+#		Fade.transition()
+#		await Fade.on_transition_finished    (PLACEMENT CODE FOR LEVEL 3)!!!
+#		go_to_level_3()
+#		level_reached = 3
+
+	if level_reached == 3 and Global.player_score >= 300: #CHANGE TO FINAL ZONE
+		Fade.transition()
+		await Fade.on_transition_finished
+		go_to_hell()
+		level_reached = 4
+
 #Load level to Level Root
 func load_level(path: String) -> void:
 	if current_level and current_level.is_inside_tree():
@@ -32,3 +44,9 @@ func load_level(path: String) -> void:
 #Ready level 2
 func go_to_level_2() -> void:
 	load_level("res://scenes/levels/level_2.tscn")
+
+func go_to_level_3() -> void:
+	load_level("res://scenes/levels/level_2.tscn")
+
+func go_to_hell() -> void:
+	load_level("res://scenes/levels/level_4_hell.tscn")
