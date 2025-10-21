@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c788s44woc42y"]
+[gd_scene load_steps=6 format=3 uid="uid://c788s44woc42y"]
 
 [ext_resource type="Script" uid="uid://co1q4y3jktrgw" path="res://scripts/interaction_agent.gd" id="1_pbfsy"]
 [ext_resource type="Script" uid="uid://cs0ciapkh05rl" path="res://scripts/interactable.gd" id="2_ji537"]
+[ext_resource type="FontFile" uid="uid://ceoseyve8hn0x" path="res://fonts/Tektur-VariableFont_wdth,wght.ttf" id="3_ji537"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbfsy"]
 radius = 18.027756
 
 [sub_resource type="LabelSettings" id="LabelSettings_ji537"]
+font = ExtResource("3_ji537")
 font_size = 22
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
