@@ -5,7 +5,7 @@ var enemy_scene_1 = preload("res://scenes/enemy1.tscn")
 var enemy_scene_2 = preload("res://scenes/enemy2.tscn")
 var enemy_scene_3 = preload("res://scenes/enemy3.tscn")
 
-var spawn_interval := 1.0
+var spawn_interval := .50
 var timer := 0.0
 var spawn_point: Marker2D
 
