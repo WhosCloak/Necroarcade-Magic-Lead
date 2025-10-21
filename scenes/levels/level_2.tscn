@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bgsoc2yyn56co"]
+[gd_scene load_steps=11 format=4 uid="uid://bgsoc2yyn56co"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_j2425"]
 [ext_resource type="Texture2D" uid="uid://d4hiu34iprnkh" path="res://tilemap/Tile_Map_NEW.png" id="2_fiq81"]
@@ -367,6 +367,12 @@ sources/0 = SubResource("TileSetAtlasSource_x42e6")
 sources/2 = SubResource("TileSetAtlasSource_qpwj6")
 sources/3 = SubResource("TileSetAtlasSource_ibugp")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fiq81"]
+vertices = PackedVector2Array(123.85156, -61.507813, 125.34375, 67.671875, -95.64844, 62.320313, -91.9375, -66.86719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(128.79999, -66.399994, 130.4, 72.799995, -100.799995, 67.2, -96.799995, -71.99999)])
+agent_radius = 5.0
+
 [node name="level_1" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
@@ -397,3 +403,8 @@ tile_set = SubResource("TileSet_nsrm0")
 
 [node name="enemyspawner" parent="." instance=ExtResource("2_g2h2n")]
 position = Vector2(209, -20)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+scale = Vector2(10, 10)
+navigation_polygon = SubResource("NavigationPolygon_fiq81")

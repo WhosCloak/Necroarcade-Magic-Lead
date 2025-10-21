@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://b3ci5m2ebr62h"]
+[gd_scene load_steps=10 format=4 uid="uid://b3ci5m2ebr62h"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://qdicobr737ki" path="res://scenes/speedup.tscn" id="3_x42e6"]
+[ext_resource type="PackedScene" uid="uid://dveylkqpqmuvt" path="res://scenes/maxammo.tscn" id="4_x42e6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iamk"]
 texture = ExtResource("1_ksju7")
@@ -289,3 +290,5 @@ position = Vector2(991, 1174)
 shape = SubResource("RectangleShape2D_6iamk")
 
 [node name="speedup" parent="." instance=ExtResource("3_x42e6")]
+
+[node name="maxammo" parent="." instance=ExtResource("4_x42e6")]

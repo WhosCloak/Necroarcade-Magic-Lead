@@ -4,6 +4,9 @@ extends CharacterBody2D
 var speed := 25
 var player: Node2D = null
 var grunt := preload("res://audios/general sounds/zombie_grunt.mp3")
+@export var max_health := 7
+var health := max_health
+var is_dead := false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var zombie_audio: AudioStreamPlayer2D = $ZombieGrunt
@@ -57,7 +60,30 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 #Death / Scoring
+func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+
+	health -= amount
+
+	# Optional: Flash animation or sound when hit
+	sprite.modulate = Color(1, 0.3, 0.3) # briefly tint red
+	await get_tree().create_timer(0.1).timeout
+	sprite.modulate = Color(1, 1, 1)
+
+	if health <= 0:
+		die()
+
+
 func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
+
 	if player and player.has_method("add_score"):
 		player.add_score()
+
+	#$AnimatedSprite2D.play("death")
+	#await $AnimatedSprite2D.animation_finished
+
 	call_deferred("queue_free")

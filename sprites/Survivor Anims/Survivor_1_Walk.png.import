@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blr4n7uhkmcyb"
-path="res://.godot/imported/Zombie1_0_Idle.png-5d2f9bcbf977574bce61f96ecb151f73.ctex"
+uid="uid://cebiba5642hgj"
+path="res://.godot/imported/Survivor_1_Walk.png-705efa2758059f977618361c05f278e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Zombie1_0_Idle.png"
-dest_files=["res://.godot/imported/Zombie1_0_Idle.png-5d2f9bcbf977574bce61f96ecb151f73.ctex"]
+source_file="res://sprites/Survivor Anims/Survivor_1_Walk.png"
+dest_files=["res://.godot/imported/Survivor_1_Walk.png-705efa2758059f977618361c05f278e8.ctex"]
 
 [params]
 

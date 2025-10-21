@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://dveylkqpqmuvt"]
 
 [ext_resource type="Script" uid="uid://bq7in8yervj1i" path="res://scripts/maxammo.gd" id="1_88k80"]
-[ext_resource type="Texture2D" uid="uid://ceaewweu3se1f" path="res://sprites/Heart.png" id="2_a0snn"]
+[ext_resource type="Texture2D" uid="uid://c4vic4kjdyyc4" path="res://sprites/Upgrades/Ammo Sprite.png" id="2_88k80"]
 [ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="3_0v7dw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_115eg"]
-atlas = ExtResource("2_a0snn")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0snn"]
+atlas = ExtResource("2_88k80")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t086v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_115eg")
+"texture": SubResource("AtlasTexture_a0snn")
 }],
 "loop": true,
 "name": &"default",

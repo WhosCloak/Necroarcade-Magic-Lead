@@ -1,8 +1,8 @@
 [gd_scene load_steps=136 format=3 uid="uid://bibggbp3wrrll"]
 
 [ext_resource type="Script" uid="uid://d166an3k21du8" path="res://scripts/enemy1.gd" id="1_nb0t0"]
-[ext_resource type="Texture2D" uid="uid://b6wygt2n15e2e" path="res://sprites/Zombie1_8_A.png" id="2_n665k"]
-[ext_resource type="Texture2D" uid="uid://cm21kbuamkl8d" path="res://sprites/Zombie1_1_Walk.png" id="2_nb0t0"]
+[ext_resource type="Texture2D" uid="uid://b6wygt2n15e2e" path="res://sprites/Zombie Anims/Zombie1_8_A.png" id="2_n665k"]
+[ext_resource type="Texture2D" uid="uid://cm21kbuamkl8d" path="res://sprites/Zombie Anims/Zombie1_1_Walk.png" id="2_nb0t0"]
 [ext_resource type="AudioStream" uid="uid://ckomr5nhv5jsb" path="res://audios/general sounds/zombie_grunt.mp3" id="4_lowyn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]

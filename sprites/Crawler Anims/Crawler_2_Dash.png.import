@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm21kbuamkl8d"
-path="res://.godot/imported/Zombie1_1_Walk.png-0e53437cdb9d770de122ff2c70ba61ac.ctex"
+uid="uid://c8cgnhxgt7j83"
+path="res://.godot/imported/Crawler_2_Dash.png-29a03df80bdc12d5502cc3ddbf07cebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Zombie1_1_Walk.png"
-dest_files=["res://.godot/imported/Zombie1_1_Walk.png-0e53437cdb9d770de122ff2c70ba61ac.ctex"]
+source_file="res://sprites/Crawler Anims/Crawler_2_Dash.png"
+dest_files=["res://.godot/imported/Crawler_2_Dash.png-29a03df80bdc12d5502cc3ddbf07cebc.ctex"]
 
 [params]
 

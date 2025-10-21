@@ -1,8 +1,8 @@
 [gd_scene load_steps=73 format=3 uid="uid://dldjgwv7l46rt"]
 
 [ext_resource type="Script" uid="uid://cbbgmj7wtrd7u" path="res://scripts/enemy2.gd" id="1_3neu4"]
-[ext_resource type="Texture2D" uid="uid://c8cgnhxgt7j83" path="res://sprites/Crawler_2_Dash.png" id="2_23kvp"]
-[ext_resource type="Texture2D" uid="uid://d18nr8dch05sg" path="res://sprites/Crawler_1_Walk.png" id="2_mhmjl"]
+[ext_resource type="Texture2D" uid="uid://c8cgnhxgt7j83" path="res://sprites/Crawler Anims/Crawler_2_Dash.png" id="2_23kvp"]
+[ext_resource type="Texture2D" uid="uid://d18nr8dch05sg" path="res://sprites/Crawler Anims/Crawler_1_Walk.png" id="2_mhmjl"]
 [ext_resource type="AudioStream" uid="uid://ckomr5nhv5jsb" path="res://audios/general sounds/zombie_grunt.mp3" id="3_mhmjl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqtoxvmvdj7nu"
-path="res://.godot/imported/Crawler_0_Idle.png-4297f12f0dcf620a59b06d757bf140fc.ctex"
+uid="uid://b6wygt2n15e2e"
+path="res://.godot/imported/Zombie1_8_A.png-f8f20d2897d0992cdc78be6bcce2ff7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Crawler_0_Idle.png"
-dest_files=["res://.godot/imported/Crawler_0_Idle.png-4297f12f0dcf620a59b06d757bf140fc.ctex"]
+source_file="res://sprites/Zombie Anims/Zombie1_8_A.png"
+dest_files=["res://.godot/imported/Zombie1_8_A.png-f8f20d2897d0992cdc78be6bcce2ff7b.ctex"]
 
 [params]
 
