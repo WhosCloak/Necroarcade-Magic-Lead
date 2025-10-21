@@ -8,6 +8,7 @@ var score = Global.player_score
 var max_health := 3
 var health := max_health
 var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
+var reload_audio = preload("res://audios/gun/basic_gun_reload.mp3")
 var flip_threshold := 1.0
 var offlightingcooldown := true
 var maxbulletcount := 18
@@ -15,7 +16,7 @@ var canshoot := true
 var magcount := maxbulletcount
 var ammocount := 50
 var reloading := false
-var reload_time := 2.0 # seconds it takes to reload
+var reload_time := 1.0
 
 @onready var cam := $Camera2D
 @onready var muzzle = $Muzzle
@@ -49,12 +50,11 @@ func _physics_process(_delta):
 	muzzle.look_at(get_global_mouse_position())
 	model_facing()
 
-
 	if Input.is_action_just_pressed("fire") and canshoot and not reloading and magcount > 0:
 		fire()
 		$Gun.play()
 	elif Input.is_action_just_pressed("fire") and magcount <= 0 and not reloading:
-		reload() # auto reload if empty
+		reload()
 
 	if Input.is_action_just_pressed("reload") and not reloading and magcount < maxbulletcount and ammocount > 0:
 		reload()
@@ -110,12 +110,11 @@ func fire():
 	if magcount <= 0:
 		canshoot = false
 
-
 func reload():
 	reloading = true
 	canshoot = false
 	$Gun.stop()
-	#reload audio
+	$reload.play()
 	await get_tree().create_timer(reload_time).timeout
 
 	var needed_bullets = maxbulletcount - magcount
@@ -126,7 +125,6 @@ func reload():
 	reloading = false
 	canshoot = true
 	update_bullet_ui()
-
 
 func update_bullet_ui():
 	bulletcount.text = str(magcount) + "/" + str(ammocount)
@@ -141,9 +139,6 @@ func magic():
 	lighting_instance.linear_velocity = direction * bulletspeed
 
 	get_tree().current_scene.add_child(lighting_instance)
-	
-
-
 
 func add_score(amount: int = 1) -> void:
 	score += amount
@@ -154,7 +149,6 @@ func add_score(amount: int = 1) -> void:
 		$CanvasLayer/Hearts/Label.visible = true
 		await get_tree().create_timer(2).timeout
 		$CanvasLayer/Hearts/Label.visible = false
-		
 
 func take_damage(amount: int):
 	health -= amount
@@ -164,27 +158,32 @@ func take_damage(amount: int):
 		if score > Global.high_score:
 			Global.high_score = score
 		die()
-		
 
 func heal(amount: int):
 	health = min(health + amount, max_health)
 	update_hearts()
 
-
 func die() -> void:
-	call_deferred("_gameover")
+	_gameover()
 
 func _gameover():
+	if not is_inside_tree():
+		return
+	
+	set_physics_process(false)
+	set_process_input(false)
+	
 	Fade.transition()
 	await Fade.on_transition_finished
-	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 	
+	if not is_inside_tree():
+		return
+		
+	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 
 func update_hearts():
 	for i in range(max_health):
 		hearts[i].visible = (i < health)
 
-
 func _on_lightingcooldown_timeout() -> void:
 	offlightingcooldown = true
-	

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://beqdml6gux2oq" path="res://scripts/enemy3.gd" id="1_kroph"]
 [ext_resource type="Texture2D" uid="uid://mfd5gqbgaplp" path="res://sprites/Knight Anims/Knight_8_A.png" id="2_xx6g3"]
 [ext_resource type="Texture2D" uid="uid://d1hiujr2psu0w" path="res://sprites/Knight Anims/Knight_1_Walk.png" id="3_2wk5q"]
-[ext_resource type="AudioStream" uid="uid://ckomr5nhv5jsb" path="res://audios/general sounds/zombie_grunt.mp3" id="4_b0uxi"]
+[ext_resource type="AudioStream" uid="uid://bc71mw8y72d46" path="res://audios/enemy sounds/shield zombie/shield_hit.wav" id="4_kroph"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]
 radius = 17.3333
@@ -666,7 +666,7 @@ speed_scale = 5.0
 flip_h = true
 
 [node name="ZombieGrunt" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_b0uxi")
+stream = ExtResource("4_kroph")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 3.0

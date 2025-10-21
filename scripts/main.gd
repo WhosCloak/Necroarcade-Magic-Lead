@@ -3,6 +3,7 @@ extends Node2D
 @onready var level_root = $LevelRoot
 var current_level: Node = null
 var level_reached := 1
+@onready var player: CharacterBody2D = $player
 
 #Start with level 1
 func _ready() -> void:
@@ -16,18 +17,21 @@ func check_next_level() -> void:
 	if level_reached == 1 and Global.player_score >= 2: #CHANGE AFTER LEVEL 2 IS DONE
 		Fade.transition()
 		await Fade.on_transition_finished
+		player.global_position = Vector2(0,0)
 		go_to_level_2()
 		level_reached = 2
 
 	if level_reached == 2 and Global.player_score >= 100: #CHANGE AFTER LEVEL 3 IS DONE
 		Fade.transition()
 		await Fade.on_transition_finished
+		player.global_position = Vector2(0,0)
 		go_to_level_3()
 		level_reached = 3
 
 	if level_reached == 3 and Global.player_score >= 150: #CHANGE TO FINAL ZONE
 		Fade.transition()
 		await Fade.on_transition_finished
+		player.global_position = Vector2(0,0)
 		go_to_hell()
 		level_reached = 4
 

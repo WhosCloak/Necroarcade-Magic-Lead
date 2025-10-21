@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://qdicobr737ki"]
+[gd_scene load_steps=8 format=3 uid="uid://qdicobr737ki"]
 
 [ext_resource type="Script" uid="uid://btftw4smxoojd" path="res://scripts/speedup.gd" id="1_t086v"]
 [ext_resource type="Texture2D" uid="uid://2vckkyn71v4x" path="res://sprites/Upgrades/Speed Shoes.png" id="2_j6y3j"]
 [ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="2_nxcth"]
+[ext_resource type="AudioStream" uid="uid://filowccjtn2v" path="res://audios/powerups/speedup.mp3" id="4_j6y3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_115eg"]
 atlas = ExtResource("2_j6y3j")
@@ -35,3 +36,6 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_j6y3j")
 
 [node name="interactable" parent="." instance=ExtResource("2_nxcth")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j6y3j")
