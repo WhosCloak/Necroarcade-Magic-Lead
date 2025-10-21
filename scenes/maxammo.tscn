@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bq7in8yervj1i" path="res://scripts/maxammo.gd" id="1_88k80"]
 [ext_resource type="Texture2D" uid="uid://c4vic4kjdyyc4" path="res://sprites/Upgrades/Ammo Sprite.png" id="2_88k80"]
 [ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="3_0v7dw"]
-[ext_resource type="AudioStream" uid="uid://cm3y36bn6n3lg" path="res://audios/powerups/nottheyuttas1.mp3" id="4_a0snn"]
+[ext_resource type="AudioStream" uid="uid://filowccjtn2v" path="res://audios/powerups/speedup.mp3" id="4_a0snn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0snn"]
 atlas = ExtResource("2_88k80")
@@ -21,6 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j6y3j"]
+radius = 13.0
 
 [node name="maxammo" type="Area2D"]
 collision_layer = 32
@@ -28,9 +29,8 @@ collision_mask = 64
 script = ExtResource("1_88k80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -1
 position = Vector2(0, -1.0000002)
-scale = Vector2(0.47375003, 0.38000003)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_t086v")
 autoplay = "default"
 
