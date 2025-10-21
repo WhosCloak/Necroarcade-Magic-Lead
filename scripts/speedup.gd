@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _on_interact():
 	is_interactable = false
-
+	$AudioStreamPlayer.play()
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.speed = 200
@@ -15,7 +15,5 @@ func _on_interact():
 
 		await get_tree().create_timer(5.0).timeout
 		player.speed = 100
-		print('speed over')
-	
 
 	self.queue_free()
