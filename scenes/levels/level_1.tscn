@@ -399,7 +399,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(310.49997, -136.49998, 
 agent_radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
-size = Vector2(5170, 60.499878)
+size = Vector2(5170, 84.49997)
 
 [node name="level_1" type="Node2D"]
 
@@ -453,7 +453,7 @@ position = Vector2(-182, -2441)
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(991, 1174)
+position = Vector2(1091, 1391)
 shape = SubResource("RectangleShape2D_6iamk")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -462,7 +462,7 @@ rotation = 1.5707964
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1066.0001, 1106.25)
+position = Vector2(1069, 946)
 shape = SubResource("RectangleShape2D_6iamk")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
