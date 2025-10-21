@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 #Level transition based on score
 func check_next_level() -> void:
-	if level_reached == 1 and Global.player_score >= 50: #CHANGE AFTER LEVEL 2 IS DONE
+	if level_reached == 1 and Global.player_score >= 2: #CHANGE AFTER LEVEL 2 IS DONE
 		Fade.transition()
 		await Fade.on_transition_finished
 		go_to_level_2()
