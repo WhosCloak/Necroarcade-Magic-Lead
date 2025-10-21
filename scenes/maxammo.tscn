@@ -28,7 +28,7 @@ collision_mask = 64
 script = ExtResource("1_88k80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -1
+z_index = 1
 position = Vector2(0, -1.0000002)
 scale = Vector2(0.47375003, 0.38000003)
 sprite_frames = SubResource("SpriteFrames_t086v")
