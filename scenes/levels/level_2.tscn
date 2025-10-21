@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4hiu34iprnkh" path="res://tilemap/Tile_Map_NEW.png" id="2_fiq81"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="2_g2h2n"]
 [ext_resource type="Texture2D" uid="uid://ba3yyxgfl181w" path="res://tilemap/Level 2 tileset.png" id="3_l37oo"]
-[ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="4_l37oo"]
+[ext_resource type="PackedScene" path="res://scenes/powerupspawner.tscn" id="4_l37oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
 texture = ExtResource("1_j2425")
