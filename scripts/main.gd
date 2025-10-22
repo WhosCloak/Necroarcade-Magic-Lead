@@ -1,56 +1,53 @@
 extends Node2D
 
 @onready var level_root = $LevelRoot
-var current_level: Node = null
-var level_reached := 1
 @onready var player: CharacterBody2D = $player
 
-#Start with level 1
+var current_level: Node = null
+var level_reached := 1
+var transitioning := false
+
+const LEVEL_1 = preload("res://scenes/levels/Level_1.tscn")
+const LEVEL_2 = preload("res://scenes/levels/Level_2.tscn")
+const LEVEL_3 = preload("res://scenes/levels/Level_3.tscn")
+const LEVEL_HELL = preload("res://scenes/levels/Level_4_hell.tscn")
+
 func _ready() -> void:
-	load_level("res://scenes/levels/Level_1.tscn")
+	load_level(LEVEL_1)
 
 func _process(_delta: float) -> void:
 	check_next_level()
 
-#Level transition based on score
 func check_next_level() -> void:
-	if level_reached == 1 and Global.player_score >= 10: #CHANGE AFTER LEVEL 2 IS DONE
-		Fade.transition()
-		await Fade.on_transition_finished
-		player.global_position = Vector2(0,0)
-		go_to_level_2()
-		level_reached = 2
+	if transitioning:
+		return
+	
+	match level_reached:
+		1:
+			if Global.player_score >= 10:
+				await transition_to(LEVEL_2)
+				level_reached = 2
+		2:
+			if Global.player_score >= 20:
+				await transition_to(LEVEL_3)
+				level_reached = 3
+		3:
+			if Global.player_score >= 30:
+				await transition_to(LEVEL_HELL)
+				level_reached = 4
 
-	if level_reached == 2 and Global.player_score >= 20: #CHANGE AFTER LEVEL 3 IS DONE
-		Fade.transition()
-		await Fade.on_transition_finished
-		player.global_position = Vector2(0,0)
-		go_to_level_3()
-		level_reached = 3
-
-	if level_reached == 3 and Global.player_score >= 30: #CHANGE TO FINAL ZONE
-		Fade.transition()
-		await Fade.on_transition_finished
-		player.global_position = Vector2(0,0)
-		go_to_hell()
-		level_reached = 4
-
-#Load level to Level Root
-func load_level(path: String) -> void:
+func load_level(scene: PackedScene) -> void:
 	if current_level and current_level.is_inside_tree():
 		current_level.queue_free()
-	var level_scene = load(path)
-	if not level_scene:
-		return
-	current_level = level_scene.instantiate()
+		await get_tree().process_frame
+	current_level = scene.instantiate()
 	level_root.add_child(current_level)
 
-#Ready level 2
-func go_to_level_2() -> void:
-	load_level("res://scenes/levels/level_2.tscn")
-
-func go_to_level_3() -> void:
-	load_level("res://scenes/levels/level_3.tscn")
-
-func go_to_hell() -> void:
-	load_level("res://scenes/levels/level_4_hell.tscn")
+func transition_to(scene: PackedScene) -> void:
+	transitioning = true
+	Fade.transition()
+	await Fade.on_transition_finished
+	load_level(scene)
+	await get_tree().process_frame
+	player.global_position = Vector2(0, 0)
+	transitioning = false

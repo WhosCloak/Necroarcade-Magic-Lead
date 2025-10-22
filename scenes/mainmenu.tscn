@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dteruq8yhjet2"]
+[gd_scene load_steps=6 format=3 uid="uid://dteruq8yhjet2"]
 
 [ext_resource type="Script" uid="uid://nq23uh7e7byf" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://cs6csxo0respx" path="res://sprites/zombiemainmenu.png" id="2_natt5"]
+[ext_resource type="FontFile" uid="uid://ceoseyve8hn0x" path="res://fonts/Tektur-VariableFont_wdth,wght.ttf" id="3_3vvtq"]
 [ext_resource type="AudioStream" uid="uid://bl6hr2cidgkg0" path="res://audios/Music/menu/Main_Menu.mp3" id="3_r3g3c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
+font = ExtResource("3_3vvtq")
+font_size = 175
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -29,8 +34,8 @@ offset_top = 113.0
 offset_right = 677.0
 offset_bottom = 353.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 175
 text = "Magic and Guns"
+label_settings = SubResource("LabelSettings_s5g8n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -43,6 +48,7 @@ offset_left = -163.0
 offset_top = 579.0
 offset_right = 205.0
 offset_bottom = 663.0
+theme_override_fonts/font = ExtResource("3_3vvtq")
 theme_override_font_sizes/font_size = 50
 text = "Start"
 
@@ -55,6 +61,7 @@ offset_left = -163.0
 offset_top = 711.0
 offset_right = 203.84796
 offset_bottom = 795.0
+theme_override_fonts/font = ExtResource("3_3vvtq")
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
@@ -67,6 +74,7 @@ offset_left = -163.0
 offset_top = 838.0
 offset_right = 203.84796
 offset_bottom = 922.0
+theme_override_fonts/font = ExtResource("3_3vvtq")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 

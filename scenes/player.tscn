@@ -1,4 +1,4 @@
-[gd_scene load_steps=264 format=3 uid="uid://cp3kf82ssstnc"]
+[gd_scene load_steps=266 format=3 uid="uid://cp3kf82ssstnc"]
 
 [ext_resource type="Script" uid="uid://ddkaihgteyl1s" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dlebl24hyfo4y" path="res://sprites/Survivor/Survivor, armless/Survivor_0_Idle.png" id="2_fjrip"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bf8jkuw24iuex" path="res://audios/gun/basic_gun_reload.mp3" id="9_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://bpfom0pmtls3k" path="res://audios/powerups/lightning1.mp3" id="10_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://c788s44woc42y" path="res://scenes/interaction_agent.tscn" id="10_y4r1p"]
+[ext_resource type="FontFile" uid="uid://ceoseyve8hn0x" path="res://fonts/Tektur-VariableFont_wdth,wght.ttf" id="11_jej6c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 18.0
@@ -1776,7 +1777,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_f1ej7"]
+font = ExtResource("11_jej6c")
+font_size = 50
+
 [sub_resource type="LabelSettings" id="LabelSettings_y4r1p"]
+font = ExtResource("11_jej6c")
 font_size = 70
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
@@ -1809,9 +1815,6 @@ texture = ExtResource("7_ur7pv")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
-
-[node name="Muzzle" type="Node2D" parent="."]
-position = Vector2(0, -45.055)
 
 [node name="Gun" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlg0r")
@@ -1846,10 +1849,8 @@ texture_filter = 1
 layout_mode = 1
 offset_right = 245.0
 offset_bottom = 71.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 50
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_f1ej7")
 horizontal_alignment = 1
 vertical_alignment = 1
 

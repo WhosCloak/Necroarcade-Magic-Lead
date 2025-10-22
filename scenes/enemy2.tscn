@@ -509,7 +509,6 @@ stream = ExtResource("4_23kvp")
 path_desired_distance = 3.0
 target_desired_distance = 3.0
 path_postprocessing = 1
-debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
