@@ -1816,9 +1816,6 @@ texture = ExtResource("7_ur7pv")
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
-[node name="Muzzle" type="Node2D" parent="."]
-position = Vector2(0, -45.055)
-
 [node name="Gun" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlg0r")
 

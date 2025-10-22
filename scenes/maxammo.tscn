@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bq7in8yervj1i" path="res://scripts/maxammo.gd" id="1_88k80"]
 [ext_resource type="Texture2D" uid="uid://c4vic4kjdyyc4" path="res://sprites/Upgrades/Ammo Sprite.png" id="2_88k80"]
 [ext_resource type="PackedScene" uid="uid://cpwtq0ghm5lkf" path="res://scenes/interactable.tscn" id="3_0v7dw"]
-[ext_resource type="AudioStream" uid="uid://cm3y36bn6n3lg" path="res://audios/powerups/nottheyuttas1.mp3" id="4_a0snn"]
+[ext_resource type="AudioStream" uid="uid://dw3p6loyu1la" path="res://audios/shotgun/shotgun_pump.mp3" id="4_a0snn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0snn"]
 atlas = ExtResource("2_88k80")
@@ -39,5 +39,5 @@ shape = SubResource("CircleShape2D_j6y3j")
 
 [node name="interactable" parent="." instance=ExtResource("3_0v7dw")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="maxammoaudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_a0snn")

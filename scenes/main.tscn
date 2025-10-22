@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3grfsvfta7fk"]
+[gd_scene load_steps=5 format=3 uid="uid://b3grfsvfta7fk"]
 
 [ext_resource type="Script" uid="uid://djjpqu61fnnfn" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cp3kf82ssstnc" path="res://scenes/player.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bya814s12oehq" path="res://scenes/pause.tscn" id="4_tipki"]
 
 [node name="main" type="Node2D"]
@@ -10,6 +11,8 @@ script = ExtResource("1_tbgi4")
 [node name="LevelRoot" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("2_tefeu")]
+
+[node name="powerupspawner" parent="." instance=ExtResource("3_jyhfs")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

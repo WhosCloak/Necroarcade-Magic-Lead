@@ -6,7 +6,7 @@ func _ready() -> void:
 
 # Button to restart game
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
 
 #Press ESC to quit
 func _input(event):

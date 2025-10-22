@@ -583,9 +583,9 @@ texture = ExtResource("2_fiq81")
 sources/0 = SubResource("TileSetAtlasSource_l37oo")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fiq81"]
-vertices = PackedVector2Array(207.14844, -128.53125, 204.84375, 156.32031, -101.953125, 157.57031, -99.640625, -130.85938)
+vertices = PackedVector2Array(195.03906, 142.20313, -93.39844, 142.20313, -93.39844, -119, 197.35938, -119)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(212.19998, -133.49998, 209.79999, 161.29999, -106.99999, 162.59999, -104.59999, -135.9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(202.4, -123.99999, 199.99998, 147.2, -98.399994, 147.2, -98.399994, -123.99999)])
 agent_radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibugp"]
@@ -634,14 +634,7 @@ position = Vector2(377, -18)
 [node name="enemyspawner4" parent="." instance=ExtResource("2_g2h2n")]
 position = Vector2(209, 375)
 
-[node name="enemyspawner5" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-1082, -38)
-
-[node name="enemyspawner6" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-1079, 58)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 scale = Vector2(10, 10)
 navigation_polygon = SubResource("NavigationPolygon_fiq81")
 

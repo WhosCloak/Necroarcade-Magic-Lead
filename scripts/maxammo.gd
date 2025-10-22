@@ -6,8 +6,9 @@ func _ready() -> void:
 	interact = Callable(self, "_on_interact")
 
 func _on_interact():
+	$maxammoaudio.play()
+	await $maxammoaudio.finished
 	is_interactable = false
-
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.ammocount = 50

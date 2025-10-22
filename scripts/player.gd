@@ -19,7 +19,7 @@ var reloading := false
 var reload_time := 1.0
 
 @onready var cam := $Camera2D
-@onready var muzzle = $Muzzle
+@onready var gun_sprite: Sprite2D = $ArmSurvivor/GunSprite
 @onready var score_label = $CanvasLayer/Score/Label
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var arm_sprite = $ArmSurvivor
@@ -47,7 +47,7 @@ func _physics_process(_delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
 	velocity = input_vector.normalized() * speed
 	move_and_slide()
-	muzzle.look_at(get_global_mouse_position())
+	gun_sprite.look_at(get_global_mouse_position())
 	model_facing()
 
 	if Input.is_action_just_pressed("fire") and canshoot and not reloading and magcount > 0:
@@ -96,7 +96,7 @@ func model_facing() -> void:
 
 func fire():
 	var bullet_instance = bullet.instantiate()
-	var fire_pos = muzzle.global_position
+	var fire_pos = gun_sprite.global_position
 	var direction = (get_global_mouse_position() - fire_pos).normalized()
 
 	bullet_instance.global_position = fire_pos
@@ -131,7 +131,7 @@ func update_bullet_ui():
 	
 func magic():
 	var lighting_instance = lighting.instantiate()
-	var fire_pos = muzzle.global_position
+	var fire_pos = gun_sprite.global_position
 	var direction = (get_global_mouse_position() - fire_pos).normalized()
 	
 	lighting_instance.global_position = fire_pos
@@ -164,22 +164,18 @@ func heal(amount: int):
 	update_hearts()
 
 func die() -> void:
-	_gameover()
+	score = 0
+	Global.player_score = 0
+	call_deferred("_gameover")
 
 func _gameover():
-	if not is_inside_tree():
+	var tree := get_tree()
+	if tree == null:
 		return
-	
-	set_physics_process(false)
-	set_process_input(false)
-	
+
 	Fade.transition()
 	await Fade.on_transition_finished
-	
-	if not is_inside_tree():
-		return
-		
-	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
+	tree.change_scene_to_file("res://scenes/gameover.tscn")
 
 func update_hearts():
 	for i in range(max_health):
