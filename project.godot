@@ -19,12 +19,17 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 Fade="*res://scenes/fade.tscn"
+global_accesibility_signal="*res://addons/accesibilitytools/global_accesibility_signal.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/accesibilitytools/plugin.cfg")
 
 [input]
 

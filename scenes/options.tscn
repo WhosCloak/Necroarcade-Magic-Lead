@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc255rk5akoia"]
+[gd_scene load_steps=4 format=3 uid="uid://bc255rk5akoia"]
 
 [ext_resource type="Script" uid="uid://b00mgi5i5nqry" path="res://scripts/options.gd" id="1_c2u1v"]
+[ext_resource type="PackedScene" uid="uid://dw1q54epx1qkh" path="res://scenes/colorblind_optionbutton.tscn" id="2_yjkok"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yjkok"]
+font_size = 20
 
 [node name="options" type="Control"]
 layout_mode = 3
@@ -20,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.158472, 0.158472, 0.158472, 1)
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1417.0
 offset_top = 956.0
@@ -28,43 +32,20 @@ offset_right = 1890.0
 offset_bottom = 1048.0
 text = "Return To Menu"
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="Colorblind Options" type="Label" parent="."]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 363.0
-offset_right = 821.0
-offset_bottom = 420.0
-scale = Vector2(1.75806, 2.52359)
+offset_left = 108.0
+offset_top = 164.0
+offset_right = 247.0
+offset_bottom = 187.0
+text = "Colorblind Modes"
+label_settings = SubResource("LabelSettings_yjkok")
 
-[node name="HSlider2" type="HSlider" parent="."]
+[node name="ColorBlindOptions" parent="." instance=ExtResource("2_yjkok")]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 85.0
-offset_right = 821.0
-offset_bottom = 142.0
-scale = Vector2(1.75806, 2.52359)
-step = 50.0
-tick_count = 3
-ticks_on_borders = true
+offset_left = 302.0
+offset_top = 164.0
+offset_right = 441.0
+offset_bottom = 195.0
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 403.0
-offset_right = 341.0
-offset_bottom = 475.0
-theme_override_font_sizes/font_size = 50
-text = "Main Audio"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 116.0
-offset_right = 341.0
-offset_bottom = 188.0
-theme_override_font_sizes/font_size = 50
-text = "Difficulty"
-vertical_alignment = 1
-
-[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
