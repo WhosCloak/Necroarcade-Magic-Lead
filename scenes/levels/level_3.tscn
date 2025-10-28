@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bn0eb7wyy2b5j"]
+[gd_scene load_steps=9 format=4 uid="uid://bn0eb7wyy2b5j"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_o8c3j"]
 [ext_resource type="Texture2D" uid="uid://ba3yyxgfl181w" path="res://tilemap/Level 2 tileset.png" id="2_0ljxa"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="2_44gv1"]
+[ext_resource type="AudioStream" uid="uid://jiw1x50bopg3" path="res://audios/Music/level1/Later_level1.mp3" id="4_0qepi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
 texture = ExtResource("1_o8c3j")
@@ -242,3 +243,7 @@ tile_set = SubResource("TileSet_nsrm0")
 
 [node name="enemyspawner" parent="." instance=ExtResource("2_44gv1")]
 position = Vector2(207, -57)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0qepi")
+autoplay = true
