@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bn0eb7wyy2b5j"]
+[gd_scene load_steps=10 format=4 uid="uid://bn0eb7wyy2b5j"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_o8c3j"]
 [ext_resource type="Texture2D" uid="uid://ba3yyxgfl181w" path="res://tilemap/Level 2 tileset.png" id="2_0ljxa"]
@@ -213,6 +213,11 @@ sources/1 = SubResource("TileSetAtlasSource_nsrm0")
 sources/0 = SubResource("TileSetAtlasSource_x42e6")
 sources/2 = SubResource("TileSetAtlasSource_0qepi")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0qepi"]
+vertices = PackedVector2Array(1910.9688, 367.97656, -782.90625, 363.0078, -763.0781, -1963.1172, 1906.0234, -1997.8594)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-773, -1973, -793, 373, 1921, 378, 1916, -2008)])
+
 [node name="level_1" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
@@ -247,3 +252,6 @@ position = Vector2(207, -57)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0qepi")
 autoplay = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_0qepi")
