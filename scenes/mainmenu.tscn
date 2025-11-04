@@ -34,7 +34,7 @@ offset_top = 9.0
 offset_right = 672.0
 offset_bottom = 468.0
 grow_horizontal = 2
-text = "Necroarcade:
+text = "NecroArcade:
  Magic & Lead"
 label_settings = SubResource("LabelSettings_s5g8n")
 horizontal_alignment = 1
