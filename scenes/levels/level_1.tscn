@@ -399,7 +399,7 @@ agent_radius = 5.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(5170, 84.49997)
 
-[node name="level_1" type="Node2D"]
+[node name="City" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
 position = Vector2(-2, -17)

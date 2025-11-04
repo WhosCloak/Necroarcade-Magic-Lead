@@ -218,7 +218,7 @@ vertices = PackedVector2Array(1910.9688, 367.97656, -782.90625, 363.0078, -763.0
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-773, -1973, -793, 373, 1921, 378, 1916, -2008)])
 
-[node name="level_1" type="Node2D"]
+[node name="Swamp" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
 position = Vector2(-2, -17)

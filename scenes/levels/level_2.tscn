@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://bgsoc2yyn56co"]
+[gd_scene load_steps=19 format=4 uid="uid://bgsoc2yyn56co"]
 
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_j2425"]
 [ext_resource type="Texture2D" uid="uid://d4hiu34iprnkh" path="res://tilemap/Tile_Map_NEW.png" id="2_fiq81"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="2_g2h2n"]
 [ext_resource type="Texture2D" uid="uid://ba3yyxgfl181w" path="res://tilemap/Level 2 tileset.png" id="3_l37oo"]
+[ext_resource type="Texture2D" uid="uid://dns6hnvwgt6vj" path="res://tilemap/lvl_2_Tileset_Extras.png" id="4_ibugp"]
 [ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="4_l37oo"]
 [ext_resource type="AudioStream" uid="uid://b8mbp1luwsl7r" path="res://audios/Music/level1/Mid_level1.mp3" id="4_qpwj6"]
 
@@ -416,6 +417,48 @@ texture = ExtResource("3_l37oo")
 11:7/0 = 0
 12:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qukl"]
+texture = ExtResource("4_ibugp")
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_nsrm0"]
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
@@ -423,6 +466,7 @@ sources/1 = SubResource("TileSetAtlasSource_nsrm0")
 sources/0 = SubResource("TileSetAtlasSource_x42e6")
 sources/2 = SubResource("TileSetAtlasSource_qpwj6")
 sources/3 = SubResource("TileSetAtlasSource_ibugp")
+sources/4 = SubResource("TileSetAtlasSource_8qukl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l37oo"]
 texture = ExtResource("2_fiq81")
@@ -595,7 +639,7 @@ size = Vector2(8, 2749.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qukl"]
 size = Vector2(3099, 34)
 
-[node name="level_2" type="Node2D"]
+[node name="Trailer Park" type="Node2D"]
 
 [node name="Roads, Buildings, and roofs" type="TileMapLayer" parent="."]
 position = Vector2(-2, -17)
