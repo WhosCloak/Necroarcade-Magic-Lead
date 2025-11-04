@@ -24,7 +24,7 @@ func check_next_level() -> void:
 	
 	match level_reached:
 		1:
-			if Global.player_score >= 10:
+			if Global.player_score >= 0:
 				await transition_to(LEVEL_2)
 				level_reached = 2
 		2:
