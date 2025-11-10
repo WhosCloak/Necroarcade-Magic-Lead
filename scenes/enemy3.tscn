@@ -1,9 +1,10 @@
-[gd_scene load_steps=96 format=3 uid="uid://dcqfc8qu4cr40"]
+[gd_scene load_steps=97 format=3 uid="uid://dcqfc8qu4cr40"]
 
 [ext_resource type="Script" uid="uid://beqdml6gux2oq" path="res://scripts/enemy3.gd" id="1_kroph"]
 [ext_resource type="Texture2D" uid="uid://mfd5gqbgaplp" path="res://sprites/Knight Anims/Knight_8_A.png" id="2_xx6g3"]
 [ext_resource type="Texture2D" uid="uid://d1hiujr2psu0w" path="res://sprites/Knight Anims/Knight_1_Walk.png" id="3_2wk5q"]
 [ext_resource type="AudioStream" uid="uid://bc71mw8y72d46" path="res://audios/enemy sounds/shield zombie/shield_hit.wav" id="4_kroph"]
+[ext_resource type="AudioStream" uid="uid://cfc8uiu4suo7y" path="res://audios/enemy sounds/shield zombie/shield_hit.mp3" id="5_xx6g3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]
 radius = 17.3333
@@ -680,5 +681,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
 shape = SubResource("CapsuleShape2D_n665k")
+
+[node name="KnightGrunt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xx6g3")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,7 +3,6 @@ extends CharacterBody2D
 #Variables
 var speed := 50
 var player: Node2D = null
-var grunt := preload("res://audios/general sounds/zombie_grunt.mp3")
 @export var max_health := 3
 var health := max_health
 var is_dead := false
@@ -11,6 +10,8 @@ var is_dead := false
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var zombie_audio: AudioStreamPlayer2D = $ZombieGrunt
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var basic_grunt: AudioStreamPlayer = $BasicGrunt
+
 var flip_threshold := 1.0
 
 
@@ -50,7 +51,7 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	$AnimatedSprite2D.play("attack")
-	zombie_audio.play()
+	basic_grunt.play()
 	await $AnimatedSprite2D.animation_finished
 
 	if is_instance_valid(body) and body.is_in_group("player"):

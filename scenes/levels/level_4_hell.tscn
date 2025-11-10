@@ -204,3 +204,4 @@ position = Vector2(991, 1174)
 shape = SubResource("RectangleShape2D_tk5v0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

@@ -7,8 +7,6 @@ var lighting := load("res://scenes/lighting.tscn")
 var score = Global.player_score
 var max_health := 3
 var health := max_health
-var gun = preload("res://audios/general impact sounds/gun_impact_var2.mp3")
-var reload_audio = preload("res://audios/gun/basic_gun_reload.mp3")
 var flip_threshold := 1.0
 var offlightingcooldown := true
 var maxbulletcount := 18
@@ -24,6 +22,10 @@ var reload_time := 1.0
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var arm_sprite = $ArmSurvivor
 @onready var bulletcount: Label = $CanvasLayer/Bulletcount/bulletcount
+@onready var gun: AudioStreamPlayer = $Gun
+@onready var reloadaudio: AudioStreamPlayer = $Reloadaudio
+@onready var lightning: AudioStreamPlayer = $Lightning
+
 @onready var hearts := [
 	$CanvasLayer/Hearts/Heart1,
 	$CanvasLayer/Hearts/Heart2,
@@ -52,7 +54,7 @@ func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("fire") and canshoot and not reloading and magcount > 0:
 		fire()
-		$Gun.play()
+		gun.play()
 	elif Input.is_action_just_pressed("fire") and magcount <= 0 and not reloading:
 		reload()
 
@@ -61,7 +63,7 @@ func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("magic") and offlightingcooldown:
 		magic()
-		$lighting.play()
+		lighting.play()
 		offlightingcooldown = false
 		$lightingcooldown.start()
 
@@ -113,8 +115,8 @@ func fire():
 func reload():
 	reloading = true
 	canshoot = false
-	$Gun.stop()
-	$reload.play()
+	gun.stop()
+	reloadaudio.play()
 	await get_tree().create_timer(reload_time).timeout
 
 	var needed_bullets = maxbulletcount - magcount

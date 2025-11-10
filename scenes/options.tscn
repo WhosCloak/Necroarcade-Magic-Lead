@@ -1,13 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://bc255rk5akoia"]
 
 [ext_resource type="Script" uid="uid://b00mgi5i5nqry" path="res://scripts/options.gd" id="1_c2u1v"]
-[ext_resource type="PackedScene" uid="uid://dw1q54epx1qkh" path="res://scenes/colorblind_optionbutton.tscn" id="2_yjkok"]
-[ext_resource type="PackedScene" uid="uid://cbt7xgy42gcrv" path="res://scenes/brightnescontrol.tscn" id="3_2iy26"]
+[ext_resource type="PackedScene" uid="uid://bgkqo074n6kgf" path="res://scenes/options_tab.tscn" id="2_yjkok"]
+
+[sub_resource type="SystemFont" id="SystemFont_c2u1v"]
+font_names = PackedStringArray("Impact")
 
 [sub_resource type="LabelSettings" id="LabelSettings_yjkok"]
-font_size = 20
+font = SubResource("SystemFont_c2u1v")
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
-[node name="options" type="Control"]
+[node name="options_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,50 +21,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2u1v")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.158472, 0.158472, 0.158472, 1)
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1417.0
-offset_top = 956.0
-offset_right = 1890.0
-offset_bottom = 1048.0
-theme_override_font_sizes/font_size = 50
-text = "Return To Menu"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
 
-[node name="Colorblind Options" type="Label" parent="."]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 164.0
-offset_right = 247.0
-offset_bottom = 187.0
-text = "Colorblind Modes"
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
 label_settings = SubResource("LabelSettings_yjkok")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ColorBlindOptions" parent="." instance=ExtResource("2_yjkok")]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 164.0
-offset_right = 441.0
-offset_bottom = 195.0
+[node name="options_tab" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_yjkok")]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Brightness" type="Label" parent="."]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 298.0
-offset_right = 278.0
-offset_bottom = 326.0
-text = "Brightness"
-label_settings = SubResource("LabelSettings_yjkok")
-
-[node name="brightnescontrol" parent="." instance=ExtResource("3_2iy26")]
-layout_mode = 1
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Exit"
