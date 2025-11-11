@@ -63,7 +63,7 @@ func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("magic") and offlightingcooldown:
 		magic()
-		lighting.play()
+		lightning.play()
 		offlightingcooldown = false
 		$lightingcooldown.start()
 
