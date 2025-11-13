@@ -7,10 +7,10 @@ var current_level: Node = null
 var level_reached := 1
 var transitioning := false
 
-const LEVEL_1 = preload("res://scenes/levels/Level_1.tscn")
-const LEVEL_2 = preload("res://scenes/levels/Level_2.tscn")
-const LEVEL_3 = preload("res://scenes/levels/Level_3.tscn")
-const LEVEL_HELL = preload("res://scenes/levels/Level_4_hell.tscn")
+const LEVEL_1 = preload("res://scenes/levels/level_1.tscn")
+const LEVEL_2 = preload("res://scenes/levels/level_2.tscn")
+const LEVEL_3 = preload("res://scenes/levels/level_3.tscn")
+const LEVEL_HELL = preload("res://scenes/levels/level_4_hell.tscn")
 
 func _ready() -> void:
 	load_level(LEVEL_1)
