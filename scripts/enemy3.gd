@@ -8,7 +8,6 @@ var health := max_health
 var is_dead := false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var zombie_audio: AudioStreamPlayer2D = $ZombieGrunt
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var knight_grunt: AudioStreamPlayer = $KnightGrunt
 

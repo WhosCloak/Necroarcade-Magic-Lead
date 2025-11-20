@@ -14,6 +14,7 @@ const LEVEL_HELL = preload("res://scenes/levels/level_4_hell.tscn")
 
 func _ready() -> void:
 	load_level(LEVEL_1)
+	$HowToPlayPopup.visible = true
 
 func _process(_delta: float) -> void:
 	check_next_level()
