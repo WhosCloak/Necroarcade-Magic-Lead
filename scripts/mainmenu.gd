@@ -14,8 +14,6 @@ func _ready():
 	
 
 func on_start_pressed() -> void: #START
-	Fade.transition()
-	await Fade.on_transition_finished
 	get_tree().change_scene_to_packed(start_level)
 
 func on_options_pressed() -> void: #OPTIONS
