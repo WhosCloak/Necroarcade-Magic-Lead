@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxirhfmh6f8n2" path="res://tilemap/Tile_Map.png" id="1_o8c3j"]
 [ext_resource type="Texture2D" uid="uid://ba3yyxgfl181w" path="res://tilemap/Level 2 tileset.png" id="2_0ljxa"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="2_44gv1"]
+[ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="3_fmg3e"]
 [ext_resource type="AudioStream" uid="uid://jiw1x50bopg3" path="res://audios/Music/level1/Later_level1.mp3" id="4_0qepi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x42e6"]
@@ -224,11 +225,6 @@ sources/1 = SubResource("TileSetAtlasSource_nsrm0")
 sources/0 = SubResource("TileSetAtlasSource_x42e6")
 sources/2 = SubResource("TileSetAtlasSource_0qepi")
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_0qepi"]
-vertices = PackedVector2Array(1910.9688, 367.97656, -782.90625, 363.0078, -763.0781, -1963.1172, 1906.0234, -1997.8594)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-773, -1973, -793, 373, 1921, 378, 1916, -2008)])
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qepi"]
 size = Vector2(1, 2749.5)
 
@@ -259,6 +255,9 @@ z_index = 1
 position = Vector2(-2, -17)
 tile_set = SubResource("TileSet_nsrm0")
 
+[node name="powerupspawner" parent="." instance=ExtResource("3_fmg3e")]
+position = Vector2(205, -74)
+
 [node name="enemyspawner" parent="." instance=ExtResource("2_44gv1")]
 position = Vector2(207, -57)
 
@@ -266,10 +265,6 @@ position = Vector2(207, -57)
 stream = ExtResource("4_0qepi")
 autoplay = true
 bus = &"Music"
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_0qepi")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-2, -17)

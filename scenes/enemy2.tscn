@@ -6,9 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://defmfr787c8k8" path="res://audios/enemy sounds/fast zombie/fast_zombie_swing.wav" id="4_23kvp"]
 [ext_resource type="AudioStream" uid="uid://8c8yyukodf5g" path="res://audios/enemy sounds/fast zombie/fast_zombie_swing.mp3" id="5_4e2ig"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]
-radius = 17.3333
-height = 66.6667
+[sub_resource type="CircleShape2D" id="CircleShape2D_4e2ig"]
+radius = 35.077694
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp6hh"]
 atlas = ExtResource("2_23kvp")
@@ -492,7 +491,7 @@ script = ExtResource("1_3neu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.6667)
-shape = SubResource("CapsuleShape2D_nb0t0")
+shape = SubResource("CircleShape2D_4e2ig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

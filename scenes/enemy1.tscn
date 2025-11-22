@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cm21kbuamkl8d" path="res://sprites/Zombie Anims/Zombie1_1_Walk.png" id="2_nb0t0"]
 [ext_resource type="AudioStream" uid="uid://0la6keapto2y" path="res://audios/enemy sounds/normal zombie/variant_zombie_grunt1.mp3" id="4_lowyn"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nb0t0"]
-radius = 17.3333
-height = 66.6667
+[sub_resource type="CircleShape2D" id="CircleShape2D_lowyn"]
+radius = 31.68245
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjq7f"]
 atlas = ExtResource("2_n665k")
@@ -932,7 +931,7 @@ script = ExtResource("1_nb0t0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.6667)
-shape = SubResource("CapsuleShape2D_nb0t0")
+shape = SubResource("CircleShape2D_lowyn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -943,9 +942,11 @@ autoplay = "walk"
 speed_scale = 5.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 3.0
-target_desired_distance = 3.0
+path_desired_distance = 10.0
+path_max_distance = 200.0
 path_postprocessing = 1
+avoidance_enabled = true
+radius = 16.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

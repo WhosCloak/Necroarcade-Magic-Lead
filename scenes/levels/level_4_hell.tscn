@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://0eexkv868fju"]
+[gd_scene load_steps=12 format=4 uid="uid://0eexkv868fju"]
 
 [ext_resource type="Texture2D" uid="uid://dgnq487wrp3r1" path="res://tilemap/HellishTEST.png" id="1_3lwwf"]
 [ext_resource type="PackedScene" uid="uid://cpy4624ry8da6" path="res://scenes/enemyspawner.tscn" id="2_8d7yq"]
+[ext_resource type="PackedScene" uid="uid://3of3kgikxj4s" path="res://scenes/powerupspawner.tscn" id="3_8d7yq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4pvk"]
 texture = ExtResource("1_3lwwf")
@@ -169,6 +170,9 @@ navigation_polygon = SubResource("NavigationPolygon_en3al")
 
 [node name="enemyspawner" parent="." instance=ExtResource("2_8d7yq")]
 position = Vector2(526, -136)
+
+[node name="powerupspawner" parent="." instance=ExtResource("3_8d7yq")]
+position = Vector2(-2, -17)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 10

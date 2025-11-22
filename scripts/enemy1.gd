@@ -8,16 +8,28 @@ var health := max_health
 var is_dead := false
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var basic_grunt: AudioStreamPlayer = $BasicGrunt
 
 var flip_threshold := 1.0
+var path_recalc_timer := 0.0
+var path_recalc_interval := 0.2 # Recalculate path every 0.2 seconds
 
 
 func _ready() -> void:
 	# Find the player by group
 	player = get_tree().get_first_node_in_group("player")
-	$NavigationAgent2D.target_position = player.global_position
+	
+	# Important: Wait for navigation to be ready
+	call_deferred("setup_navigation")
+
+
+func setup_navigation() -> void:
+	# Wait for the first physics frame to ensure NavigationServer is ready
+	await get_tree().physics_frame
+	
+	if player:
+		nav_agent.target_position = player.global_position
 
 
 func model_facing() -> void:
@@ -25,24 +37,35 @@ func model_facing() -> void:
 		return
 	if abs(velocity.x) > flip_threshold:
 		sprite.flip_h = velocity.x < 0.0
-		
-		
+
+
+func _physics_process(delta):
+	if is_dead or not player:
+		return
 	
-func makepath():
-	await get_tree().physics_frame
-	if player:
+	# Update path periodically instead of every frame for performance
+	path_recalc_timer += delta
+	if path_recalc_timer >= path_recalc_interval:
+		path_recalc_timer = 0.0
 		nav_agent.target_position = player.global_position
-
-
-func _physics_process(_delta):
-	if player:
-		nav_agent.target_position = player.global_position
+		
+		# DEBUG: Check if path is valid
+		if nav_agent.is_target_reachable():
+			print("Path found to player")
+		else:
+			print("WARNING: No valid path to player! Check navigation layers!")
+	
+	# Check if navigation is finished or path is invalid
 	if nav_agent.is_navigation_finished():
 		return
-		
-	var current_pos = global_position
+	
+	# Get next position in path
 	var next_pos = nav_agent.get_next_path_position()
-	velocity = current_pos.direction_to(next_pos) * speed
+	var current_pos = global_position
+	
+	# Calculate direction and velocity
+	var direction = current_pos.direction_to(next_pos)
+	velocity = direction * speed
 	
 	move_and_slide()
 	model_facing()
@@ -82,7 +105,6 @@ func die() -> void:
 
 	if player and player.has_method("add_score"):
 		player.add_score()
-
 
 	#$AnimatedSprite2D.play("death")
 	#await $AnimatedSprite2D.animation_finished
