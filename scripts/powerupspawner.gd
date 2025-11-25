@@ -5,7 +5,7 @@ var maxammo = preload("res://scenes/maxammo.tscn")
 
 # Spawn tuning 
 var spawn_distance = 200
-var spawn_interval = .5
+var spawn_interval = 1
 var timer := 0.0 
 var player: Node2D 
 
