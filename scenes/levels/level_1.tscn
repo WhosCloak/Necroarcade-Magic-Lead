@@ -652,11 +652,11 @@ position = Vector2(25, -481)
 [node name="powerupspawner" parent="." instance=ExtResource("4_6761a")]
 position = Vector2(-2, -17)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-182, -2441)
 collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(974, 1429.125)
 shape = SubResource("RectangleShape2D_6iamk")
 
