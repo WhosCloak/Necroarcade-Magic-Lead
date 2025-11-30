@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ceoseyve8hn0x" path="res://fonts/Tektur-VariableFont_wdth,wght.ttf" id="3_ji537"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbfsy"]
-radius = 18.027756
+radius = 24.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ji537"]
 font = ExtResource("3_ji537")

@@ -6,8 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://bc71mw8y72d46" path="res://audios/enemy sounds/shield zombie/shield_hit.wav" id="4_kroph"]
 [ext_resource type="AudioStream" uid="uid://cfc8uiu4suo7y" path="res://audios/enemy sounds/shield zombie/shield_hit.mp3" id="5_xx6g3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xx6g3"]
-radius = 40.088787
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xx6g3"]
+radius = 15.0
+height = 81.333405
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b0uxi"]
 atlas = ExtResource("2_xx6g3")
@@ -638,9 +639,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n665k"]
-radius = 18.0
-height = 64.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_2wk5q"]
+radius = 50.089916
 
 [node name="enemy3" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
@@ -652,7 +652,7 @@ script = ExtResource("1_kroph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.6667)
-shape = SubResource("CircleShape2D_xx6g3")
+shape = SubResource("CapsuleShape2D_xx6g3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -679,7 +679,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
-shape = SubResource("CapsuleShape2D_n665k")
+shape = SubResource("CircleShape2D_2wk5q")
 
 [node name="KnightGrunt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xx6g3")

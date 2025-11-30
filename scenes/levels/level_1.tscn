@@ -653,13 +653,12 @@ tile_set = SubResource("TileSet_6761a")
 position = Vector2(582, -484)
 
 [node name="enemyspawner2" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(359, -481)
+position = Vector2(2112, -240)
 
 [node name="enemyspawner3" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(25, -481)
+position = Vector2(-8, 864)
 
 [node name="powerupspawner" parent="." instance=ExtResource("4_6761a")]
-position = Vector2(-2, -17)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-182, -2441)

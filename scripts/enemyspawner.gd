@@ -1,15 +1,13 @@
 extends Node2D
 
-# Load enemy scenes
-var enemy_scene_1 = preload("res://scenes/enemy1.tscn")
-var enemy_scene_2 = preload("res://scenes/enemy2.tscn")
-var enemy_scene_3 = preload("res://scenes/enemy3.tscn")
+@export var spawn_interval := 7.0
+@export var enemy_scenes: Array[PackedScene]
 
-var spawn_interval := 7
 var timer := 0.0
 var spawn_point: Marker2D
 
 func _ready():
+	add_to_group("spawners")   # so we can kill all spawners when changing levels
 	spawn_point = $Marker2D
 	randomize()
 
@@ -22,12 +20,14 @@ func _process(delta):
 func spawn_enemy():
 	if not spawn_point:
 		return
+	
+	if enemy_scenes.is_empty():
+		return
 
-	# Choose a random enemy scene
-	var enemy_scenes = [enemy_scene_1, enemy_scene_2, enemy_scene_3]
+	# Pick a random enemy scene
 	var enemy_scene = enemy_scenes[randi() % enemy_scenes.size()]
-
 	var enemy = enemy_scene.instantiate()
+
 	enemy.global_position = spawn_point.global_position
 
-	get_tree().current_scene.add_child(enemy)
+	get_parent().add_child(enemy)

@@ -49,11 +49,6 @@ func _physics_process(delta):
 		path_recalc_timer = 0.0
 		nav_agent.target_position = player.global_position
 		
-		# DEBUG: Check if path is valid
-		if nav_agent.is_target_reachable():
-			print("Path found to player")
-		else:
-			print("WARNING: No valid path to player! Check navigation layers!")
 	
 	# Check if navigation is finished or path is invalid
 	if nav_agent.is_navigation_finished():

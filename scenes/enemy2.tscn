@@ -6,8 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://defmfr787c8k8" path="res://audios/enemy sounds/fast zombie/fast_zombie_swing.wav" id="4_23kvp"]
 [ext_resource type="AudioStream" uid="uid://8c8yyukodf5g" path="res://audios/enemy sounds/fast zombie/fast_zombie_swing.mp3" id="5_4e2ig"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4e2ig"]
-radius = 35.077694
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4e2ig"]
+radius = 18.333332
+height = 64.66673
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp6hh"]
 atlas = ExtResource("2_23kvp")
@@ -477,9 +478,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n665k"]
-radius = 18.0
-height = 64.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsk8u"]
+radius = 38.356514
 
 [node name="enemy2" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(0.6, 0.6)
@@ -491,7 +491,7 @@ script = ExtResource("1_3neu4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30.6667)
-shape = SubResource("CircleShape2D_4e2ig")
+shape = SubResource("CapsuleShape2D_4e2ig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -516,7 +516,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -31.3333)
-shape = SubResource("CapsuleShape2D_n665k")
+shape = SubResource("CircleShape2D_lsk8u")
 
 [node name="CrawlerGrunt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4e2ig")
