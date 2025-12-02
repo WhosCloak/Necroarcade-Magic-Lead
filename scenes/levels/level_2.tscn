@@ -786,3 +786,9 @@ position = Vector2(-713, 216)
 
 [node name="enemyspawner3" parent="." instance=ExtResource("2_g2h2n")]
 position = Vector2(-651, -176)
+
+[node name="enemyspawner4" parent="." instance=ExtResource("2_g2h2n")]
+position = Vector2(-576, 201)
+
+[node name="enemyspawner5" parent="." instance=ExtResource("2_g2h2n")]
+position = Vector2(-12, 475)
