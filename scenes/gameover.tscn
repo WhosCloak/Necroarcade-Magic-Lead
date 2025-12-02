@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_h8i2o"]
 font = ExtResource("3_2mkfd")
-font_size = 175
+font_size = 100
 
 [node name="gameover" type="Control"]
 layout_mode = 3
@@ -26,11 +26,10 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 60.0
-offset_right = 1923.0
-offset_bottom = 456.0
-theme_override_font_sizes/font_size = 100
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 1915.0
+offset_bottom = 399.0
 text = "GAME OVER
 PRESS ESC TO QUIT
 "
@@ -40,10 +39,9 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 474.0
-offset_right = 1917.0
-offset_bottom = 604.0
+offset_top = 836.0
+offset_right = 1911.0
+offset_bottom = 966.0
 theme_override_font_sizes/font_size = 100
 text = "Highest Score : 0"
 label_settings = SubResource("LabelSettings_h8i2o")
