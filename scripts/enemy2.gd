@@ -66,9 +66,7 @@ func _physics_process(delta):
 	# Apply movement and handle collisions
 	move_and_slide()
 	
-	# If we hit a wall, recalculate path immediately
-	if get_slide_collision_count() > 0 && path_recalc_timer == 0:
-		nav_agent.target_position = player.global_position
+
 	
 	model_facing()
 
