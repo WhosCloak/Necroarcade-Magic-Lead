@@ -782,13 +782,13 @@ position = Vector2(-545, -238)
 position = Vector2(-692, -173)
 
 [node name="enemyspawner2" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-713, 216)
+position = Vector2(-482, 1228)
 
 [node name="enemyspawner3" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-651, -176)
+position = Vector2(1410, -55)
 
 [node name="enemyspawner4" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-576, 201)
+position = Vector2(377, -1007)
 
 [node name="enemyspawner5" parent="." instance=ExtResource("2_g2h2n")]
-position = Vector2(-12, 475)
+position = Vector2(1241, 1234)

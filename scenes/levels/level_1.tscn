@@ -659,10 +659,10 @@ position = Vector2(935, -108)
 position = Vector2(-11, 847)
 
 [node name="enemyspawner4" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(-12, 759)
+position = Vector2(1138, 956)
 
 [node name="enemyspawner5" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(318, -113)
+position = Vector2(1668, 67)
 
 [node name="powerupspawner" parent="." instance=ExtResource("4_6761a")]
 
