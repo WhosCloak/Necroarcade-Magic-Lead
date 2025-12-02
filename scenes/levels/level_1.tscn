@@ -650,13 +650,19 @@ tile_map_data = PackedByteArray("AADz//j/AAAHAAcAAADz//n/AAAHAAgAAAD0//j/AAAIAAc
 tile_set = SubResource("TileSet_6761a")
 
 [node name="enemyspawner" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(582, -484)
+position = Vector2(-73, -120)
 
 [node name="enemyspawner2" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(2112, -240)
+position = Vector2(935, -108)
 
 [node name="enemyspawner3" parent="." instance=ExtResource("3_nsrm0")]
-position = Vector2(-8, 864)
+position = Vector2(-11, 847)
+
+[node name="enemyspawner4" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(-12, 759)
+
+[node name="enemyspawner5" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(318, -113)
 
 [node name="powerupspawner" parent="." instance=ExtResource("4_6761a")]
 
