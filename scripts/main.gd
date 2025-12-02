@@ -13,7 +13,7 @@ const LEVEL_3 = preload("res://scenes/levels/level_3.tscn")
 const LEVEL_HELL = preload("res://scenes/levels/level_4_hell.tscn")
 
 func _ready() -> void:
-	load_level(LEVEL_1)
+	load_level(LEVEL_3)
 	$HowToPlayPopup.visible = true
 
 func _process(_delta: float) -> void:
