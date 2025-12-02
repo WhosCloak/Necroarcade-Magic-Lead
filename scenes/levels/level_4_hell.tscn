@@ -270,6 +270,18 @@ tile_set = SubResource("TileSet_ichfj")
 [node name="enemyspawner" parent="." instance=ExtResource("2_8d7yq")]
 position = Vector2(526, -136)
 
+[node name="enemyspawner2" parent="." instance=ExtResource("2_8d7yq")]
+position = Vector2(-439, -151)
+
+[node name="enemyspawner3" parent="." instance=ExtResource("2_8d7yq")]
+position = Vector2(-241, 605)
+
+[node name="enemyspawner4" parent="." instance=ExtResource("2_8d7yq")]
+position = Vector2(389, 472)
+
+[node name="enemyspawner5" parent="." instance=ExtResource("2_8d7yq")]
+position = Vector2(104, -208)
+
 [node name="powerupspawner" parent="." instance=ExtResource("3_8d7yq")]
 position = Vector2(-2, -17)
 
