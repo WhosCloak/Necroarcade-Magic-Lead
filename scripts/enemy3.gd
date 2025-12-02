@@ -14,7 +14,7 @@ var is_dead := false
 
 var flip_threshold := 1.0
 var path_recalc_timer := 0.0
-var path_recalc_interval := 0.2 # Recalculate path every 0.2 seconds
+var path_recalc_interval := 0.5 # Recalculate path every 0.2 seconds
 
 
 func _ready() -> void:
@@ -67,7 +67,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	# If we hit a wall, recalculate path immediately
-	if get_slide_collision_count() > 0:
+	if get_slide_collision_count() > 0 && path_recalc_timer == 0:
 		nav_agent.target_position = player.global_position
 	
 	model_facing()

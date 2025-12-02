@@ -16,6 +16,7 @@ func _process(delta):
 	if timer >= spawn_interval:
 		timer = 0
 		spawn_enemy()
+	#print(enemy_scenes)
 
 func spawn_enemy():
 	if not spawn_point:
