@@ -3,7 +3,7 @@ extends CharacterBody2D
 #Variables
 var speed := 50
 var player: Node2D = null
-@export var max_health := 3
+@export var max_health := 6
 var health := max_health
 var is_dead := false
 
@@ -106,7 +106,7 @@ func die() -> void:
 	is_dead = true
 
 	if player and player.has_method("add_score"):
-		player.add_score()
+		player.add_score(3)
 
 	#$AnimatedSprite2D.play("death")
 	#await $AnimatedSprite2D.animation_finished

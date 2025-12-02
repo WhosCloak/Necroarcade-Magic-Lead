@@ -98,7 +98,7 @@ func die() -> void:
 	is_dead = true
 
 	if player and player.has_method("add_score"):
-		player.add_score()
+		player.add_score(2)
 
 	#$AnimatedSprite2D.play("death")
 	#await $AnimatedSprite2D.animation_finished

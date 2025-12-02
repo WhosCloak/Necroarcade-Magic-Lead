@@ -25,15 +25,15 @@ func check_next_level() -> void:
 	
 	match level_reached:
 		1:
-			if Global.player_score >= 10:
+			if Global.player_score >= 20:
 				await transition_to(LEVEL_2)
 				level_reached = 2
 		2:
-			if Global.player_score >= 20:
+			if Global.player_score >= 40:
 				await transition_to(LEVEL_3)
 				level_reached = 3
 		3:
-			if Global.player_score >= 30:
+			if Global.player_score >= 60:
 				await transition_to(LEVEL_HELL)
 				level_reached = 4
 

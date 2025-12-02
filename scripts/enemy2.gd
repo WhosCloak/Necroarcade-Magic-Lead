@@ -3,7 +3,7 @@ extends CharacterBody2D
 #Variables
 var speed := 150
 var player: Node2D = null
-@export var max_health := 2
+@export var max_health := 1
 var health := max_health
 var is_dead := false
 
