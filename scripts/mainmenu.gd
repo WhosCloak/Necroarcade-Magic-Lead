@@ -29,6 +29,8 @@ func on_exit_options_menu() -> void:
 	margin_container.visible = true
 	options_menu.visible = false
 
+#func on_credits_pressed() -> void #credits
+
 
 func handle_signals() -> void:
 	start.button_down.connect(on_start_pressed)
@@ -36,3 +38,7 @@ func handle_signals() -> void:
 	exit.button_down.connect(on_exit_pressed)
 	options_menu.exit_options.connect(on_exit_options_menu)
 	
+
+
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
