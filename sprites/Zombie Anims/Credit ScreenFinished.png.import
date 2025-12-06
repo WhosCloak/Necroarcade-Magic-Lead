@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp1s01v0hdhbx"
-path="res://.godot/imported/Credit Screen.png-bd3c50b3ebfd3c1b5aee7ddcbf7c2afc.ctex"
+uid="uid://b1vurpimeskx"
+path="res://.godot/imported/Credit ScreenFinished.png-edf81f0fcc46c1bc6293199dd875c9d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Credit Screen.png"
-dest_files=["res://.godot/imported/Credit Screen.png-bd3c50b3ebfd3c1b5aee7ddcbf7c2afc.ctex"]
+source_file="res://sprites/Zombie Anims/Credit ScreenFinished.png"
+dest_files=["res://.godot/imported/Credit ScreenFinished.png-edf81f0fcc46c1bc6293199dd875c9d9.ctex"]
 
 [params]
 
