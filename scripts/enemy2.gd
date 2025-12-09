@@ -4,6 +4,8 @@ extends CharacterBody2D
 var speed := 150
 var player: Node2D = null
 @export var max_health := 1
+@export var desired_path_distance: float = 4.0
+@export var max_path_distance: float = 10.0
 var health := max_health
 var is_dead := false
 
@@ -20,18 +22,10 @@ var path_recalc_interval := 0.5 # Recalculate path every 0.2 seconds
 func _ready() -> void:
 	# Find the player by group
 	player = get_tree().get_first_node_in_group("player")
-	
+	nav_agent.path_desired_distance = desired_path_distance
+	nav_agent.path_max_distance = max_path_distance
 	# Important: Wait for navigation to be ready
 	call_deferred("setup_navigation")
-
-
-func setup_navigation() -> void:
-	# Wait for the first physics frame to ensure NavigationServer is ready
-	await get_tree().physics_frame
-	
-	if player:
-		nav_agent.target_position = player.global_position
-
 
 func model_facing() -> void:
 	if sprite == null:
@@ -41,33 +35,20 @@ func model_facing() -> void:
 
 
 func _physics_process(delta):
-	if is_dead or not player:
-		return
-	
-	# Update path periodically instead of every frame for performance
+	if not player: return
 	path_recalc_timer += delta
-	if path_recalc_timer >= path_recalc_interval:
-		path_recalc_timer = 0.0
-		nav_agent.target_position = player.global_position
-	
-	# Check if navigation is finished or path is invalid
-	if nav_agent.is_navigation_finished():
-		velocity = Vector2.ZERO
-		return
-	
-	# Get next position in path
-	var next_pos = nav_agent.get_next_path_position()
-	var current_pos = global_position
-	
-	# Calculate direction and velocity
-	var direction = current_pos.direction_to(next_pos)
-	velocity = direction * speed
-	
-	# Apply movement and handle collisions
-	move_and_slide()
-	
 
-	
+	# Set target and get next path point
+	if path_recalc_timer >= path_recalc_interval:
+		nav_agent.target_position = player.global_position
+		path_recalc_timer = 0.0
+	var next_path_point = nav_agent.get_next_path_position()
+
+	# Calculate velocity towards the next point
+	var direction = global_position.direction_to(next_path_point)
+	velocity = direction * speed
+	move_and_slide()
+
 	model_facing()
 
 
